@@ -111,6 +111,9 @@ if (isset($_POST['regBtn'])){
       
     // }
    ?>
+   <html>
+   <main>
+   <section>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="text" name="username" placeholder ="Username">
         <input type="text" name="email" placeholder ="E-mail">
