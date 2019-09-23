@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,29 +14,29 @@
             <div class="login-bg">
                 <div class="row ">
                     <div class="col-7 login-content">
-                        <form action="/action_page.php" class="signup-form" onsubmit="return formValidation()">
+                        <form action="includes/signup.inc.php" method="post" class="signup-form" onsubmit="return formValidation()">
                             <div class="form-header">
                                 <h1>Create Your Heracle Account</h1>
                             </div>
                             <div class="form-group">
                                 <!-- <label for="firstname">firstname</label><br> -->
-                                <input type="text" class="login-control" id="firstname" placeholder="firstname" required><br>
+                                <input type="text" class="login-control" id="firstname" placeholder="Fullname" required name="fullname"><br>
                                 <!-- <label for="lastname">lastname</label><br> -->
-                                <input type="text" class="login-control" id="lastname" placeholder="lastname"> 
+                                <!-- <input type="text" class="login-control" id="lastname" placeholder="lastname">  -->
                             </div><br>
                             <div class="form-group" required>
                                     <!-- <label for="email">email address</label><br> -->
-                                    <input type="text" class="login-control" id="email" placeholder="Email Address"><br>
+                                    <input type="text" class="login-control" id="email" name="email"placeholder="Email Address"><br>
                                     <!-- <label for="phonenumber">phone number</label><br> -->
-                                    <input type="text" class="login-control" id="mobile" placeholder="Phone number">
+                                    <input type="text" class="login-control" id="mobile"name="mobile" placeholder="Phone number">
                                 </div><br>
                             <div class="form-group">
                                 <!-- <label for="pwd">Password</label><br> -->
-                                <input type="password" class="login-control" id="password" placeholder="Password" required><br>
+                                <input type="password" class="login-control" id="password" placeholder="Password" required name="password"><br>
                                 <!-- <label for="pwd">Confirm Password</label><br> -->
-                                <input type="password" class="login-control" id="Cpassword" placeholder="Confirm Password" required>
+                                <input type="password" class="login-control" id="Cpassword"name="confirmPassword" placeholder="Confirm Password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary signup-btn">create account</button>
+                            <button type="submit" name="regBtn"class="btn btn-primary signup-btn">create account</button>
                         </form>         
                     </div>
                     <div class="col-5 signup-content">

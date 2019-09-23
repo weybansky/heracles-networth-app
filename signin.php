@@ -14,22 +14,22 @@
        <div class="row">
            <div class="col-md-6">
                 <div class="bg-white form d-flex">
-                        <form action="" class="form-group">
+                        <form action="includes/login.inc.php" method="post" class="form-group">
                             <h5 class="font-weight-bolder">Log in to Create Your Heracle Account</h5>
                             <div class="email-content">
                                 <label for="email" class="pt-2">EMAIL ADDRESS</label>
-                                <input type="email" class="form-control fc">
+                                <input type="email" class="form-control fc" name="email">
                             </div> <br/>
                             <div class="pwrd-content">
                                     <label for="password">PASSWORD</label>
-                                    <input type="password" class="form-control fc">
+                                    <input type="password" name="password"class="form-control fc">
                                 </div> <br/>
                             <div class="button">
-                                <button class="form-control btn" type="submit">Login</button>
+                                <button class="form-control btn"  name="loginBtn"type="submit">Login</button>
                             </div> <br/>
                             <div class="register d-flex">
                                 <p class="mx-auto"> Dont have an account?
-                                    <a class="nav-item text-dark" href="#">Register</a>
+                                    <a class="nav-item text-dark" href="signup.php">Register</a>
                                 </p>
                             </div>
                         </form>

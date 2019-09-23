@@ -1,10 +1,10 @@
 <?php
 // make that use the same credential as the signup db
-$servername = "";
-$dbUsername="";
-//if i get any error.. i will check the password and change it 
-$dbPassword ="";
-$dbName ="";
+$servername = "localhost";
+$dbUsername="root";
+$dbPassword = "chukky162";
+$dbName ="testSignup";
+
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword,$dbName );
 
@@ -18,10 +18,13 @@ if (isset($_POST['loginBtn'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  if (empty($mailuid) || empty($password)) {
-		array_push($errors, "Please fill in your credentials");
-     header('Location: ../error.php');
- }
+  if (empty($email) || empty($password)) {
+		// array_push($errors, "Please fill in your credentials");
+    //  header('Location: ../error.php');
+echo "please Fill every input field";
+exit();
+
+  }
   else{
    $sql="SELECT * FROM users WHERE   email=?";
    $stmt = mysqli_stmt_init($conn);
@@ -35,21 +38,23 @@ if (isset($_POST['loginBtn'])) {
      if($row = mysqli_fetch_assoc($result)){
          $pwdCheck= password_verify($password, $row['pwd']);
        if ($pwdCheck){
-    		array_push($errors, "Wrong password");
+         echo "Wrong password"
+    		// array_push($errors, "Wrong password");
          exit();   
        }else if($pwdCheck == true){
          session_start();
          $_SESSION['userId']= $row['id'];
-         $_SESSION['username']= $row['username'];
-     		array_push($errors, "Login Successful");
+         $_SESSION['fullname']= $row ['fullname'];
+         // array_push($errors, "Login Successful");
+         echo "SUCCESSFULLY LOGGEDIN"
         
-         header("Location: ../index.php?login=successs");
+         header("Location: ../dashboard.php?login=successs");
           exit();
        }
      }else{
-    		array_push($errors, "Email exists");
-
-       header("Location: ../error.php?error=error");
+    		// array_push($errors, "Email exists");
+      echo "something went wrong"
+       header("Location: ../sigin.php?error=error");
        exit();  
      }
    }
