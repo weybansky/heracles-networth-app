@@ -1,6 +1,6 @@
 <?php
 // make that use the same credential as the signup db
-$servername = " us-cdbr-iron-east-02.cleardb.net";
+$servername = "us-cdbr-iron-east-02.cleardb.net";
 $dbUsername="b0ae198915bb2d";
 //if i get any error.. i will check the password and change it 
 $dbPassword ="16a1a0d0";
