@@ -4,10 +4,10 @@
 #username set to VARCHAR 255
 #email set to VARCHAR 255
 #pwd (meaning password)
-$servername = "";
-$dbUsername="";
-$dbPassword = "";
-$dbName ="";
+$servername = "us-cdbr-iron-east-02.cleardb.net";
+$dbUsername="b0ae198915bb2d";
+$dbPassword = "16a1a0d0";
+$dbName ="heroku_6639abf7d3c0725";
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword,$dbName );
 
