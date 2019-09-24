@@ -4,10 +4,10 @@
 #username set to VARCHAR 255
 #email set to VARCHAR 255
 #pwd (meaning password)
-$servername = "localhost";
-$dbUsername="root";
-$dbPassword = "chukky162";
-$dbName ="testSignup";
+$servername = "us-cdbr-iron-east-02.cleardb.net";
+$dbUsername="b0ae198915bb2d";
+$dbPassword = "16a1a0d0";
+$dbName ="heroku_6639abf7d3c0725";
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword,$dbName );
 // $errors = [];
@@ -96,3 +96,42 @@ if (isset($_POST['regBtn'])){
     header("Location: ../signup.php");
     exit();    
   }
+  ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+
+  <section>
+    <h1>SignUp</h1>
+   <?php
+    // if(isset($_GET['error'])){
+    //   if($_GET){
+    //    echo '<p> Fill in all fields';
+    //   }elseif($_GET['error'] == "invalid..."){
+    //     echo "...";
+    //   }
+    // }elseif(){
+      
+    // }
+   ?>
+   <html>
+   <main>
+   <section>
+      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <input type="text" name="username" placeholder ="Username">
+        <input type="text" name="email" placeholder ="E-mail">
+        <input type="password" name="password" id="" placeholder='Password...'>
+        <input type="password" name="confirmpassword" id="" placeholder='Repeat Password...'>
+        <button type="submit" name="regBtn">Submit</button>
+      </form>
+  </section>
+</main>
+</body>
+</html>

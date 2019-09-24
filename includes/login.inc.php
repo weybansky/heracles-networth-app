@@ -1,10 +1,10 @@
 <?php
 // make that use the same credential as the signup db
-$servername = "localhost";
-$dbUsername="root";
-$dbPassword = "chukky162";
-$dbName ="testSignup";
-
+$servername = "us-cdbr-iron-east-02.cleardb.net";
+$dbUsername="b0ae198915bb2d";
+//if i get any error.. i will check the password and change it 
+$dbPassword ="16a1a0d0";
+$dbName ="heroku_6639abf7d3c0725";
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword,$dbName );
 

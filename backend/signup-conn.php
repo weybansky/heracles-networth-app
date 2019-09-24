@@ -1,30 +1,11 @@
-<!-- PLEASE READ -->
-<!-- all connections done here for signup, login and logout -->
-<!-- create a database locally "networth-calculator" with a 4-row table named "users" -->
-<!-- users table will have "id","username","email","password" -->
-<!-- feel free to add your conditions -->
-
 <?php
-
-session_start();
-	
-	$username = "";
- 	$email = "";
- 	$password = "";
- 	$password = md5($password);
- 	$errors = array();
-
-$db = mysqli_connect("localhost","root", "", "networth-calculator");
-if(!$db){
-	die("unable to connect: " . mysqli_error($db));
-}
-
 // signup
 
 if(isset($_POST['regBtn'])){
 // selecting all data from table users to check if email already exists
 	$username = $_POST['username'];
  	$email = $_POST['email'];
+ 	$phone = $_POST['phone'];
  	$password = $_POST['password'];
  	$confirmPassword = $_POST['confirmPassword'];
  	$password = md5($password);
@@ -37,7 +18,8 @@ if(isset($_POST['regBtn'])){
 	$num = mysqli_num_rows($s);
 	if($num == 1){
 		array_push($errors, "Email exists");
-} 	else if($username == "" || $email = "" || $password == "" || $confirmPassword == ""){
+} 	else if($username == "" || $email = "" || $password == "" || 
+	$confirmPassword == "" || $phone == ""){
 	array_push($errors, "One or more fields cannot be empty");
 }
 	else if($password != $confirmPassword){
@@ -52,29 +34,16 @@ if(isset($_POST['regBtn'])){
 }
 		// inserting information if all conditions are met
 	else{
-		$reg = mysqli_query($db, "INSERT INTO users(username, email, password) 
-			VALUES('$username', '$email', '$password')");
+		$reg = mysqli_query($db, "INSERT INTO users(username, email, password, phone) 
+			VALUES('$username', '$email', '$password', '$phone')");
 	if(!$reg){
 		die("unable to connect: " . mysqli_error($db));
 	}
 		// redirects to login page once all conditions are met
-		header("Location: login.php");      
+		array_push($valids, "Registeration Successful");
+		header("Location: logintest.php");      
 }
 
-}
-
-
-// login
-
-if(isset($_POST['loginBtn'])){
-
-}
-
-
-// logout
-
-if(isset($_GET['logoutBtn'])){
-	
 }
 
 
