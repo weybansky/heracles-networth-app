@@ -4,46 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="signin.css">
+    <title>Heracle|sign-in</title>
 </head>
 <body>
-    <div class="container-fluid login-container">
-            <div class="login-bg">
-                <div class="row ">
-                    <div class="col-7 login-content animated slideInLeft">
-                        <form action="/action_page.php" class="login-form">
-                            <div class="form-header">
-                                <h1>Login to Your Heracle Account</h1>
+   <div class="container-fluid main d-flex">
+       <div class="row">
+           <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="bg-white form d-flex">
+                        <form action="" class="form-group">
+                            <h5 class="font-weight-bolder">Log in to Create Your Heracle Account</h5>
+                            <div class="email-content">
+                                <label for="email" class="pt-2">EMAIL ADDRESS</label>
+                                <input type="email" class="form-control fc">
+                            </div> <br/>
+                            <div class="pwrd-content">
+                                    <label for="password">PASSWORD</label>
+                                    <input type="password" class="form-control fc">
+                                </div> <br/>
+                            <div class="button">
+                                <button class="form-control btn" type="submit">Login</button>
+                            </div> <br/>
+                            <div class="register d-flex">
+                                <p class="mx-auto"> Don't have an account?
+                                    <a class="nav-item text-dark" href="signup.html">Register</a>
+                                </p>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email address:</label><br>
-                                <input type="email" class="login-control" id="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">Password:</label><br>
-                                <input type="password" class="login-control" id="pwd">
-                            </div>
-                            <div class="form-group form-check">
-                                <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Remember me
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary login-btn">Submit</button>
-                        </form>         
+                        </form>
                     </div>
-                    <div class="col-5 login-content">
-                        <img src="https://res.cloudinary.com/benjee/image/upload/v1569283279/undraw_chore_list_iof3_1_hfbbj3.svg" alt="login illustration" class="login-image">
-                    </div>
+           </div>
+           <div class="col-sm-6 col-md-6 col-lg-6 img-content">
+                <img class="my-5" src="https://res.cloudinary.com/benjee/image/upload/v1569253813/undraw_chore_list_iof3_s3yoyc.svg" alt="sign-in-svg-image">
+           </div>
+       </div>
+       <!-- <div class="main-content row">
+           <div class="col-12 d-flex">
+           <img class="img-fluid my-4 mx-auto" src="https://res.cloudinary.com/benjee/image/upload/v1569253813/undraw_chore_list_iof3_s3yoyc.svg" alt="sign-in-svg-image">
+        </div>
+        <div class=" bg-white form d-flex">
+            <form action="" class="form-group mx-auto">
+                <h4 class="font-weight-bolder">Log in to Create Your Heracle Account</h4>
+                <div class="email-content">
+                    <label for="email" class="pt-2">EMAIL</label>
+                    <input type="email" class="form-control fc">
+                </div> <br/>
+                <div class="pwrd-content">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" class="form-control fc">
+                    </div> <br/>
+                <div class="button">
+                    <button class="form-control btn" type="submit">Login</button>
+                </div> <br/>
+                <div class="register">
+                    <p>Dont have an account?
+                        <a class="nav-item" href="#">Register</a>
+                    </p>
                 </div>
-            </div>
-    </div>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            </form>
+        </div>
+    </div> -->
+   </div>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>
