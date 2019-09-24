@@ -1,1 +1,1 @@
-<?php include('Hercules.html');?>
+<?php include_once('hercules.html');?>
