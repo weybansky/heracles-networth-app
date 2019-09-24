@@ -4,6 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up | Net Worth Calculator</title>
+    <link rel="stylesheet" href="heracles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container"> 
+    <div class="row" >
+    <div class="col-6"> <img src="https://res.cloudinary.com/benjee/image/upload/v1569253813/undraw_chore_list_iof3_s3yoyc.svg" />
+    </div>
+       <div class="col-6 signup" >
+           <form method="post" action="signup.php">
+                <h1> Create Your Heracle Account</h1>
+                <div class="inputs">
+                <label for="firstname">First Name</label> <br>
+                <input type="text" name="firstname" required> </div>
+                <div class="inputs">
+                <label for="lastname">Last Name</label> <br>
+                <input type="text" name="lastname" required> </div>
+                <div class="inputs">
+                <label for="email">Email</label> <br>
+                 <input type="email" name="email" required> </div>
+                 <div class="inputs">
+                <label for="phonenumber">Phone Number</label> <br>
+                <input type="tel" name="phonenumber" required> </div>
+                <div class="inputs">
+                <label for="password">Password</label> <br>
+                <input type="password" name="password" pattern=".{8,}" title="Password should be Eight (8) or more characters" min-lenght="8"> </div>
+                <div class="inputs">
+               <label for="password">Confirm Password</label> <br>
+                <input type="password" name="password" pattern=".{8,}" title="Password should be Eight (8) or more characters" min-lenght="8" > </div>
+                <input type="submit" value="Sign Up">
+                
+                <p>Have an account already? <a href="index.html"> Sign In</a></p>
+                
+
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+<!-- </html>
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="signup.css">
@@ -43,7 +86,7 @@
                     </div>
                 </div>
             </div>
-    </div>
+    </div> -->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
