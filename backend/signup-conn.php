@@ -40,6 +40,7 @@ if(isset($_POST['regBtn'])){
 		die("unable to connect: " . mysqli_error($db));
 	}
 		// redirects to login page once all conditions are met
+		array_push($valids, "Registeration Successful");
 		header("Location: logintest.php");      
 }
 
