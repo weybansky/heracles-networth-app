@@ -1,4 +1,4 @@
-.signup-container{
+.login-container{
     min-height: 100px;
 }
 .login-bg{
@@ -6,7 +6,7 @@
     background-size: cover;
     width: 90%;
 }
-.signup-form{
+.login-form{
     text-align: center;
     background-color: #ffffff;
     border-radius: 30px;
@@ -19,10 +19,6 @@
     font-size: 25px;
     margin-bottom: 20%; 
 }
-.form-group{
-    display: flex;
-    font-size: 16px;
-}
 .login-control{
     border-bottom: 2px solid #26255B;
     border-top: none;
@@ -32,19 +28,19 @@
     outline: none;
     width: 80%;
 }
-.signup-btn{
+.login-btn{
     width: 80%;
     border-radius: 20px;
     background-color: #26255B;
     border: #26255B;
 }
-.signup-btn:hover{
+.login-btn:hover{
     background-color: rgb(20, 20, 48);
 }
-.signup-content{
+.login-content{
     margin: 2% 0%;
     padding: 4% 0;
 }
-.signup-image{
+.login-image{
     height: 80%;
 }
