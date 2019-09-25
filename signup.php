@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Heracles | Signup</title>
+    <link rel="icon" href="images/Heracles.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="signup.css">
 </head>
@@ -12,6 +13,7 @@
     <div class="container-fluid login-container">
             <div class="login-bg">
                 <div class="row ">
+<<<<<<< HEAD:signup.php
                     <div class="col-7 login-content">
                  <?php
                  if (isset($_GET["error"])) {
@@ -43,11 +45,13 @@
                                 <input type="password" class="login-control" id="Cpassword"name="confirmPassword" placeholder="Confirm Password" required>
                             </div>
                             <button type="submit" name="regBtn"class="btn btn-primary signup-btn">create account</button>
+
                         </form>         
                     </div>
-                    <div class="col-5 signup-content">
+                    <div class="col-sm-5 col-md-5 col-lg-5 image-content signup-content">
                         <img src="https://res.cloudinary.com/benjee/image/upload/v1569283279/undraw_chore_list_iof3_1_hfbbj3.svg" alt="login illustration" class="signup-image">
                     </div>
+                    
                 </div>
             </div>
     </div>

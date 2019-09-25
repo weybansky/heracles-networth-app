@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="sign-in.css">
-    <title>Heracle||sign-in</title>
+    <link rel="stylesheet" href="signin.css">
+    <title>Heracle|sign-in</title>
 </head>
 <body>
    <div class="container-fluid main d-flex">
        <div class="row">
-           <div class="col-md-6">
+           <div class="col-sm-6 col-md-6 col-lg-6">
                 <div class="bg-white form d-flex">
                 <?php
                  if (isset($_GET["error"])) {
@@ -42,7 +42,7 @@
                         </form>
                     </div>
            </div>
-           <div class="col-md-6 img-content">
+           <div class="col-sm-6 col-md-6 col-lg-6 img-content">
                 <img class="my-5" src="https://res.cloudinary.com/benjee/image/upload/v1569253813/undraw_chore_list_iof3_s3yoyc.svg" alt="sign-in-svg-image">
            </div>
        </div>

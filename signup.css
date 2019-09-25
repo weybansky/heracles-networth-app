@@ -13,6 +13,7 @@ body {
     background-color: #5a4fcf;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100vh;
 }
 
 /* The class .signup is used to make all style affect the signup page only */
@@ -81,16 +82,22 @@ color: #5a4fcf;
 .login-bg{
     background: url('https://res.cloudinary.com/benjee/image/upload/v1569283278/Vector_dgyn22.png') no-repeat center;
     background-size: cover;
-    width: 90%;
+    width: 90vw;
+    height: 100vh;
+    
 }
 .signup-form{
     text-align: center;
     background-color: #ffffff;
     border-radius: 30px;
-    height: 85%;
-    width: 65%;
-    padding: 10%;
+    height: 70vh;
+    width:fit-content ;
+    padding: 5%;
     margin: 10%;
+}
+.login-container{
+    padding:0;
+    margin:0;
 }
 .form-header h1{
     font-size: 25px;
@@ -124,4 +131,10 @@ color: #5a4fcf;
 }
 .signup-image{
     height: 80%;
+}
+.login-link{
+    color:#26255B;
+}
+.login-link:hover{
+  color: rgb(20, 20, 48);  
 }

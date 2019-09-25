@@ -5,12 +5,12 @@
 html{
     height: 100%;
     position: relative;
-    background-color: #6C63FF;
+    background-color: #26255B;
 }
 .main{
     padding: 0;
     margin: 0;
-    background-color: #6C63FF;
+    background-color: #26255B;
 }
 .form{
     border-radius: 30px;
@@ -26,16 +26,16 @@ html{
 }
 .fc{
     border: none;
-    border-bottom: 1px solid #6C63FF;
+    border-bottom: 1px solid #26255B;
     transition-property: border-bottom;
 }
 .fc:focus{
     outline: none;
     box-shadow: none;
-    border-bottom: 3px solid #6C63FF;
+    border-bottom: 3px solid #26255B;
 }
 .btn{
-    background-color:  #6C63FF;
+    background-color:  #26255B;
     border-radius: 20px;
     color: #ffffff;
 }
