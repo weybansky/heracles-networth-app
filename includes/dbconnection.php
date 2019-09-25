@@ -6,7 +6,7 @@
 define('DB_SERVER','localhost');
 define('DB_USER','root');
 define('DB_PASS' ,'chukky162');
-define('DB_NAME', 'loginsystem2');
+define('DB_NAME', 'loginwi');
 $con = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 
 // Check connection

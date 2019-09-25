@@ -13,7 +13,7 @@
     <div class="container-fluid login-container">
             <div class="login-bg">
                 <div class="row ">
-<<<<<<< HEAD:signup.php
+
                     <div class="col-7 login-content">
                  <?php
                  if (isset($_GET["error"])) {
