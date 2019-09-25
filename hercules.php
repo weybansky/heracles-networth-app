@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
   $msg = "You are already logged in";
-  header("location:../dashboard.php?message=$msg");
+  header("location: dashboard.php?message=$msg");
 }?>
 <!DOCTYPE html>
 <html lang="en">
