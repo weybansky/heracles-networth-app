@@ -10,3 +10,13 @@ create table if not exists `networth` (
 	REFERENCES `users`(`id`)
 	ON DELETE CASCADE ON UPDATE cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+//username
+bf719ff1122979
+ //host
+us-cdbr-iron-east-02.cleardb.net
+-- //password
+f2612284
