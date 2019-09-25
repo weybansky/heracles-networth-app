@@ -183,3 +183,11 @@ input:focus {
     width: 150px;
     height: 45px;
 }
+.sub-heading{
+    color: #26255B;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+@media (min-width: 576px) {
+    .house{visibility: hidden}
+}
