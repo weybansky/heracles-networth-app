@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,13 @@
             <div class="login-bg">
                 <div class="row ">
                     <div class="col-7 login-content">
+                 <?php
+                 if (isset($_GET["error"])) {
+                    if ($_GET['error']=='userAlreadyExist') {
+                         echo '<center style="color:white;"><h1> USER ALREADY EXIST</h1><center>';
+                        }    
+                     }
+                    ?>
                         <form action="includes/signup.inc.php" method="post" class="signup-form" onsubmit="return formValidation()">
                             <div class="form-header">
                                 <h1>Create Your Heracle Account</h1>
@@ -26,7 +32,7 @@
                             </div><br>
                             <div class="form-group" required>
                                     <!-- <label for="email">email address</label><br> -->
-                                    <input type="text" class="login-control" id="email" name="email"placeholder="Email Address"><br>
+                                    <input type="email" class="login-control" id="email" name="email"placeholder="Email Address"><br>
                                     <!-- <label for="phonenumber">phone number</label><br> -->
                                     <input type="text" class="login-control" id="mobile"name="mobile" placeholder="Phone number">
                                 </div><br>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+  $msg = "You are already logged in";
+  header("location:../dashboard.php?message=$msg");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +29,8 @@
             <nav>
                 <img src="" alt="Hercules-logo" width="100px" height="100px">
                 <ul id="nav-items">
-                    <li><a href="index.html" id="active">Log In</a></li>
-                    <li><a href="Signup.html">Sign Up</a></li>
+                    <li><a href="signin.php" id="active">Log In</a></li>
+                    <li><a href="Signup.php">Sign Up</a></li>
 
 
                 </ul>
@@ -34,13 +40,11 @@
             </nav>
         </header>
         <!-- <br><br><br><br><br><br> -->
+        <!-- <h1>Know your worth with Hercules App!</h1><br> -->
+
         <section>
             <div class="first-div">
-                <h1>Know your worth with Hercules App!</h1><br>
                 <p>If you sold all your asset and paid all your debt, what would be left over?<br>That's your net worth. Calculate it here<br></p>
-
-
-
             </div>
         </section>
 

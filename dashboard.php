@@ -1,3 +1,10 @@
+<?php
+session_start();
+// include("includes/checklogin.php");
+// check_login();
+
+	
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -14,24 +21,35 @@
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>&& $_SESSION["loggedin"] == true
         <![endif]-->
+        <?php if (isset($_SESSION["loggedin"])): ?>
         <main class="container">
             <header>
                 <div class="header">
                     <p>Home</p>
-                    <span>Welcome, Username</span>
+                    <span>Welcome,<?php echo $_SESSION['name']?></span>
                 </div>
             </header>
+            <?php
+                 if (isset($_GET["error"])) {
+                    if ($_GET['error']=='Logged_In_successfully') {
+                         echo '<center><h1> Successfully LoggedIn</h1><center>';
+                        }else{
+                         echo '<center><h1> You are already LoggedIn</h1><center>';
+
+                        }  
+                     }
+                    ?>
             <nav class="nav-header">
-                <span><a href="#">Heracles</a></span>
-                <span><a href="#">Username</a></span>
+                <span>Heracles</span>
+                <span><?php echo $_SESSION['name']?></span>
             </nav>
             <section>
                 <div class="nav-links">
                     <a href="#">Home</a>
                     <a href="#">Settings</a>
-                    <a href="#">Log-Out</a>
+                    <a href="includes/logout.inc.php">Log-Out</a>
                 </div>
                 <div class="content">
                     <div class="summary">
@@ -113,6 +131,11 @@
                 </div>
             </section>
         </main>
+        <?php else:?>
+<h1>You are not allowed here ... Please <a href="signin.php">signin</a> to Access this page</h1>
+        
+        <?php endif;?>
+        
         <script src="" async defer></script>
     </body>
 </html>

@@ -14,15 +14,22 @@
        <div class="row">
            <div class="col-md-6">
                 <div class="bg-white form d-flex">
+                <?php
+                 if (isset($_GET["error"])) {
+                    if ($_GET['error']=='Invalid_Username_and_Password') {
+                         echo '<center><h1> INVALID USERNAME AND PASSWORD</h1><center>';
+                        }  
+                     }
+                    ?>
                         <form action="includes/login.inc.php" method="post" class="form-group">
                             <h5 class="font-weight-bolder">Log in to Create Your Heracle Account</h5>
                             <div class="email-content">
                                 <label for="email" class="pt-2">EMAIL ADDRESS</label>
-                                <input type="email" class="form-control fc" name="email">
+                                <input type="email" id="email" class="form-control fc" name="email">
                             </div> <br/>
                             <div class="pwrd-content">
                                     <label for="password">PASSWORD</label>
-                                    <input type="password" name="password"class="form-control fc">
+                                    <input type="password" id="password"name="password"class="form-control fc">
                                 </div> <br/>
                             <div class="button">
                                 <button class="form-control btn"  name="loginBtn"type="submit">Login</button>
