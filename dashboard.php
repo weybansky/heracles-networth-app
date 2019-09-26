@@ -29,10 +29,24 @@ session_start();
         <![endif]-->
 <?php if (isset($_SESSION["loggedin"])): ?>
         <main class="container-fluid">
-            <header class="nav-header">
+        <header class="nav-header">
                 <span><a href="#">Heracles</a></span>
-                <span><?php echo $_SESSION['name']?></span>
-            </header>
+                <div class="summary" >
+                        <div class="networth"  >
+                            <p>Your Net worth</p>
+                            <span id="_networth">00.00</span>
+                        </div>
+                        <div class="assets">
+                            <p>Your Assets</p>
+                            <span id="assetSum">00.00</span>
+                        </div>
+                        <div class="liability">
+                            <p>Your Liability</p>
+                            <span id="liabilitySum">- 00.00</span>
+                        </div>
+                </div>
+                <span><a href="#">Username</a></span>
+        </header>
 
             <div class="dashboard-contain">
                 <section class="nav-left">
@@ -63,7 +77,7 @@ session_start();
                         <span>Welcome,<?php echo $_SESSION['name']?></span>
 
                     </div>
-                    <div class="summary">
+                    <!-- <div class="summary">
                             <div class="networth">
                                 <p>Your Net worth</p>
                                 <span>00.00</span>
@@ -76,7 +90,7 @@ session_start();
                                 <p>Your Liability</p>
                                 <span>- 00.00</span>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="dashboard-content">
                                 <div class="calculate">
                                     <div>
