@@ -28,7 +28,7 @@
                                    }    
                                 }
                            ?> 
-                        <form action="includes/signup.inc.php" method="post"  onsubmit="return formValidation()">
+                        <form action="includes/signup.inc.php" method="post"  onsubmit="return formValidation();">
                             <div class="form-header">
                                     <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
                                     <h1>Create Your Account</h1>

@@ -34,42 +34,42 @@ function formValidation() {
     return false;
   }
 
-  else if (lastnameLen < 3) {
-    alert("Lastname should be at least 3 characters long");
-    lastname.focus();
-    return false;
-  }
-  else if (!name.value.match(letters)) {
+  // else if (lastnameLen < 3) {
+  //   alert("Lastname should be at least 3 characters long");
+  //   lastname.focus();
+  //   return false;
+  // }
+  if (!name.value.match(letters)) {
     alert("Fullname should be alphabet characters only");
     name.focus();
     return false;
   }
-  else if (!lastname.value.match(letters)) {
-    alert("Username should be alphabet characters only");
-    lastname.focus();
-    return false;
-  }
-  else if (emailLen == 0 || atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= emailLen) {
+  //  if (!lastname.value.match(letters)) {
+  //   alert("Username should be alphabet characters only");
+  //   lastname.focus();
+  //   return false;
+  // }
+  if (emailLen == 0 || atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= emailLen) {
     alert("Please enter a valid email address");
     email.focus();
     return false;
   }
-  else if (phoneLen !== 11 || !phone.value.match(numbers)) {
+  if (phoneLen !== 11 || !phone.value.match(numbers)) {
     alert("Please enter a valid phone numer, 11 digits only eg 09012345678");
     phone.focus();
     return false;
   }
-  else if (passwordLen < 5) {
+  if (passwordLen < 5) {
     alert("Password should be at least 5 charcaters long");
     password.focus();
     return false;
   }
-  else if (cpasswordLen == 0 || cpassword.value !== password.value) {
+  if (cpasswordLen == 0 || cpassword.value !== password.value) {
     alert("Your password does not match");
     cpassword.focus();
     return false;
   }
-  else {
-    return true;
-  }
+
+  return true;
+
 }
