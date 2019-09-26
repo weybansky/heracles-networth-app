@@ -1,3 +1,10 @@
+<?php
+session_start();
+// include("includes/checklogin.php");
+// check_login();
+
+	
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -18,10 +25,11 @@
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>&& $_SESSION["loggedin"] == true
         <![endif]-->
+<?php if (isset($_SESSION["loggedin"])): ?>
         <main class="container-fluid">
-            <header class="nav-header">
+        <header class="nav-header">
                 <span><a href="#">Heracles</a></span>
                 <div class="summary" >
                         <div class="networth"  >
@@ -38,27 +46,39 @@
                         </div>
                 </div>
                 <span><a href="#">Username</a></span>
-            </header>
+        </header>
+
             <div class="dashboard-contain">
                 <section class="nav-left">
                     <div class="nav-links">
-                        <a href="#"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/home-icon-silhouette_vzxxtu.svg" alt="home" width="30" height="30"></span>Home</a>
-                        <a href="#"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a>
-                        <a href="#"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
+                        <a href="<?php echo $_SERVER["PHP_SELF"]?>"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/home-icon-silhouette_vzxxtu.svg" alt="home" width="30" height="30"></span>Home</a>
+                        <a href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a>
+                        <a href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
                     </div>
                 </section>
                 <section class="dashboard-header">
                     <div class="header">
+                    <?php
+                 if (isset($_GET["error"])) {
+                    if ($_GET['error']=='Logged_In_successfully') {
+                         echo '<center><h1> Successfully LoggedIn</h1><center>';
+                        }else{
+                         echo '<center><h1> You are already LoggedIn</h1><center>';
+
+                        }  
+                     }
+                    ?>
                         <span>
                             <p>
                             <img src="https://res.cloudinary.com/benjee/image/upload/v1569337224/home-icon-silhouette_vzxxtu.svg" alt="home" width="30" height="30">
                             Home
                             </p>
                         </span>
-                        <span>Welcome, Username</span>
+                        <span>Welcome,<?php echo $_SESSION['name']?></span>
+
                     </div>
-                    <!-- <div class="summary" >
-                            <div class="networth" id="_networth" >
+                    <!-- <div class="summary">
+                            <div class="networth">
                                 <p>Your Net worth</p>
                                 <span>00.00</span>
                             </div>
@@ -181,18 +201,17 @@
             <div class="reset" onclick="_reset()"><button><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</button></div>
             </div>
         </section>
+        </main>
+<?php else:?>
+<h1>You are not logged in, Please <a href="signin.php">signin</a> to Access this page</h1>
+        
+        <?php endif;?>
         <!-- <script src="" async defer></script> -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/networth.js"></script>
-    <script>
-        function currency(){
-            document.querySelector(".currency_color").style.background= '#26255B';
-            document.querySelector(".currency_color").style.border= 'none';
-            
-        }
-    </script>
+
     </body>
 </html>
 
