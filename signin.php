@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="signin.css">
     <title>Heracle|sign-in</title>
 </head>
 <body>
-   <div class="container-fluid main d-flex">
-       <div class="row">
-           <div class="col-sm-6 col-md-6 col-lg-6">
-                <div class="bg-white form d-flex">
+       <div class="mobile">
+                <div class="bg-white form animated slideInLeft ">
                 <?php
                  if (isset($_GET["error"])) {
                     if ($_GET['error']=='Invalid_Username_and_Password') {
@@ -21,8 +21,11 @@
                         }  
                      }
                     ?>
-                        <form action="includes/login.inc.php" method="post" class="form-group">
-                            <h5 class="font-weight-bolder">Log in to Create Your Heracle Account</h5>
+                        <form action="includes/login.inc.php" method="post" class="form-container">
+                            <div class="form-header">
+                                <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
+                                <h1>Login Your Account</h1>
+                            </div>
                             <div class="email-content">
                                 <label for="email" class="pt-2">EMAIL ADDRESS</label>
                                 <input type="email" id="email" class="form-control fc" name="email">
@@ -42,10 +45,6 @@
                         </form>
                     </div>
            </div>
-           <div class="col-sm-6 col-md-6 col-lg-6 img-content">
-                <img class="my-5" src="https://res.cloudinary.com/benjee/image/upload/v1569253813/undraw_chore_list_iof3_s3yoyc.svg" alt="sign-in-svg-image">
-           </div>
-       </div>
        <!-- <div class="main-content row">
            <div class="col-12 d-flex">
            <img class="img-fluid my-4 mx-auto" src="https://res.cloudinary.com/benjee/image/upload/v1569253813/undraw_chore_list_iof3_s3yoyc.svg" alt="sign-in-svg-image">

@@ -7,14 +7,13 @@
     <title>Heracles | Signup</title>
     <link rel="icon" href="images/Heracles.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <div class="container-fluid login-container">
+    <div class="login-container">
             <div class="login-bg">
-                <div class="row ">
-
-                    <div class="col-7 login-content">
+                    <div class="login-content">
                  <?php
                  if (isset($_GET["error"])) {
                     if ($_GET['error']=='userAlreadyExist') {
@@ -22,34 +21,33 @@
                         }    
                      }
                     ?>
-                        <form action="includes/signup.inc.php" method="post" class="signup-form" onsubmit="return formValidation()">
+                        <form action="includes/signup.inc.php" method="post" class="signup-form animated slideInLeft" onsubmit="return formValidation()">
                             <div class="form-header">
-                                <h1>Create Your Heracle Account</h1>
-                            </div>
+                                    <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
+                                    <h1>Create Your Account</h1>
+                                </div>
                             <div class="form-group">
-                                <!-- <label for="firstname">firstname</label><br> -->
-                                <input type="text" class="login-control" id="firstname" placeholder="Fullname" required name="fullname"><br>
-                                <!-- <label for="lastname">lastname</label><br> -->
-                                <!-- <input type="text" class="login-control" id="lastname" placeholder="lastname">  -->
-                            </div><br>
+                                <input type="text" class="login-control" id="firstname" placeholder="Fullname" required name="fullname">
+                                </div>
                             <div class="form-group" required>
-                                    <!-- <label for="email">email address</label><br> -->
-                                    <input type="email" class="login-control" id="email" name="email"placeholder="Email Address"><br>
-                                    <!-- <label for="phonenumber">phone number</label><br> -->
+                                <div class="input-control">
+                                    <input type="email" class="login-control" id="email" name="email"placeholder="Email Address">
                                     <input type="text" class="login-control" id="mobile"name="mobile" placeholder="Phone number">
-                                </div><br>
+                                </div>
+                                </div>
                             <div class="form-group">
-                                <!-- <label for="pwd">Password</label><br> -->
-                                <input type="password" class="login-control" id="password" placeholder="Password" required name="password"><br>
-                                <!-- <label for="pwd">Confirm Password</label><br> -->
-                                <input type="password" class="login-control" id="Cpassword"name="confirmPassword" placeholder="Confirm Password" required>
+                                <div class="input-control">
+                                    <input type="password" class="login-control" id="password" placeholder="Password" required name="password">
+                                    <input type="password" class="login-control" id="Cpassword"name="confirmPassword" placeholder="Confirm Password" required>
+                                </div>
                             </div>
-                            <button type="submit" name="regBtn"class="btn btn-primary signup-btn">create account</button>
-
+                            <button type="submit" name="regBtn"class="btn signup-btn">create account</button>
+                            <div class="register d-flex">
+                                    <p class="mx-auto"> Dont have an account?
+                                        <a class="nav-item text-dark" href="signup.php">Register</a>
+                                    </p>
+                                </div>
                         </form>         
-                    </div>
-                    <div class="col-sm-5 col-md-5 col-lg-5 image-content signup-content">
-                        <img src="https://res.cloudinary.com/benjee/image/upload/v1569283279/undraw_chore_list_iof3_1_hfbbj3.svg" alt="login illustration" class="signup-image">
                     </div>
                     
                 </div>
