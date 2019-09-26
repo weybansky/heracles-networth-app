@@ -23,8 +23,27 @@
                                     echo '<p><p style = "text-align:center" class="text-danger"> User already exists</p><p>';
                                    }elseif($_GET['error']=='emptyfields'){
                                     echo '<p><p style = "text-align:center" class="text-danger"> PLease all fields correctly</p><p>';
-                                   }else{
-                                    echo '<p><p style = "text-align:center" class="text-danger">PLease make sure that your passwords match</p><p>';
+                                   }
+                                   
+                                   elseif($_GET['error']=='pwd'){
+                                    echo '<p><p style = "text-align:center" class="text-danger"> please confirm password</p><p>';
+                                   }
+                                   
+                                   elseif($_GET['error']=='num'){
+                                    echo '<p><p style = "text-align:center" class="text-danger"> Check your Number</p><p>';
+                                   }
+                                   
+                                   elseif($_GET['error']=='emails'){
+                                    echo '<p><p style = "text-align:center" class="text-danger"> Check your Email</p><p>';
+                                   }
+
+                                   
+                                   elseif($_GET['error']=='name'){
+                                    echo '<p><p style = "text-align:center" class="text-danger"> Check your name</p><p>';
+                                   }
+
+                                   else{
+                                    echo '<p><p style = "text-align:center" class="text-danger">Something is not right</p><p>';
                                    }    
                                 }
                            ?> 
