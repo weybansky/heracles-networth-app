@@ -1,6 +1,6 @@
 function formValidation() {
   "use strict";
-  var name = document.getElementById('fullname');
+  var name = document.getElementById('firstname');
   // document.forms["SignupForm"]["name"];
   var lastname = document.getElementById('lastname');
   // document.forms["SignupForm"]["lastname"];
@@ -29,7 +29,7 @@ function formValidation() {
   // ;
 
   if (nameLen < 3) {
-    alert("Firstname should be at least 3 characters long");
+    alert("Fullname should be at least 3 characters long");
     name.focus();
     return false;
   }
@@ -40,7 +40,7 @@ function formValidation() {
     return false;
   }
   else if (!name.value.match(letters)) {
-    alert("Firstname should be alphabet characters only");
+    alert("Fullname should be alphabet characters only");
     name.focus();
     return false;
   }

@@ -16,13 +16,18 @@
                     <div class="login-content">
                  
                     <div class="signup-form animated slideInLeft">
-                        <?php
-                         if (isset($_GET["error"])) {
-                            if ($_GET['error']=='userAlreadyExist') {
-                                 echo '<p><p style = "text-align:center" class="text-danger"> User already exists</p></p>';
-                                }    
-                             }
-                        ?>
+                    
+                         <?php
+                            if (isset($_GET["error"])) {
+                               if ($_GET['error']=='userAlreadyExist') {
+                                    echo '<p><p style = "text-align:center" class="text-danger"> User already exists</p><p>';
+                                   }elseif($_GET['error']=='emptyfields'){
+                                    echo '<p><p style = "text-align:center" class="text-danger"> PLease all fields correctly</p><p>';
+                                   }else{
+                                    echo '<p><p style = "text-align:center" class="text-danger">PLease make sure that your passwords match</p><p>';
+                                   }    
+                                }
+                           ?> 
                         <form action="includes/signup.inc.php" method="post"  onsubmit="return formValidation()">
                             <div class="form-header">
                                     <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
