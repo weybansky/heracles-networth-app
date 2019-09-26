@@ -46,7 +46,7 @@
                             <button type="submit" name="regBtn"class="btn signup-btn">create account</button>
                             <div class="register d-flex">
                                     <p class="mx-auto"> Already have an account?
-                                        <a class="nav-item text-dark" href="signin.php">Signin</a>
+                                        <a class="nav-item text-dark" href="signin.php">Log in</a>
                                     </p>
                                 </div>
                         </form> 
