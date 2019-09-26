@@ -101,65 +101,109 @@ session_start();
                                             <div class="cash">
                                                 <p>Cash</p>
                                                 <label for="checking account">Checking Account</label>
-                                                 <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="checking account" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account" placeholder="N 0.00">
                                                 <label for="savings account">Savings Account</label>
-                                                 <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="savings account" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account" placeholder="N 0.00">
                                                 <label for="text">Savings Bonds</label>
-                                                 <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="savings bonds" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
                                                 <label for="cd's">CDs</label>
-                                                 <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="cd's" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's" placeholder="N 0.00">
                                                 <label for="other">Other</label>
-                                                 <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="other" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other" placeholder="N 0.00">
                                             </div>
             
                                         <div class="cash">
                                             <p>Property</p>
                                             
                                             <label for="cars">Automobiles</label>
-                                             <input type = 'number' class = 'asset' onchange = getArray() type="text" name="cars" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cars" placeholder="N 0.00">
 
                                             <label for="savings bonds">House Furnishing</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="savings bonds" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
                                             <label for="jewellery">Jewellery</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="cd's" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's" placeholder="N 0.00">
                                             <label for="other">Other</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="other" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other" placeholder="N 0.00">
                                         </div>
                                         
                                         <div class="cash">
                                             <p>Insurance</p>
                                             <label for="insurance">Insurance Value</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="checking account" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account" placeholder="N 0.00">
                                             <p>Market value of Home(s)</p>
                                             <label for="primary residence">Primary Residence</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="savings account" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account" placeholder="N 0.00">
                                             <label for="rental">Rental/Vacation properties</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="savings bonds" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
                                             <p>Retirement Savings</p>
                                             <label for="pensions">Pensions</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="pensions" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="pensions" placeholder="N 0.00">
                                         </div>
         
                                         <div class="cash">
                                             <p>Other Investments</p>
                                             <label for="stocks">Stocks</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="checking account" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account" placeholder="N 0.00">
                                             <label for="mutual funds">Mutual Funds</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="savings account" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account" placeholder="N 0.00">
                                             <label for="others">Others</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="savings bonds" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
                                             <label for="value of business" id="business-value">Value of Business you own</label>
-                                             <input type = 'number' class = 'asset' onchange = inputValidate() type="text" name="cd's" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's" placeholder="N 0.00">
                                         </div>
                                     </div>
-                                </div>
-                                    <div class="reset"><a href="#"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</a></div>
-                                </div>
                             </div>
                 </section>  
         </main>
+        <section class="dashboard-header">
+            <div>
+                <h5 class="assets-header">Liability</h5>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 sub-heading">
+                    Balance due on debt
+                </div>
+                <div class="col-lg-4 col-sm-12 sub-heading">
+                    Bills due
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-12">
+                    <label for="student loan">Student loan</label><br>
+                    <input type = 'number' class ='_liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="student loan" placeholder="N 0.00">
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="home equity loan">Home equity loans</label><br>
+                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()'  id="home equity loan" placeholder="N 0.00">
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="house hold utility">House hold utility</label><br>
+                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="house hold utility" placeholder="N 0.00">
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="mortage">Mortages</label><br>
+                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="mortage" placeholder="N 0.00">
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="auto loans">Auto loans</label><br>
+                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="auto loans" placeholder="N 0.00">
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="taxes due">Taxes due</label><br>
+                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="taxes due" placeholder="N 0.00">
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="other loans">Other loans</label><br>
+                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="other loans" placeholder="N 0.00">
+                </div>
+            </div>
+            </div>
+            <div class="reset" onclick="_reset()"><button><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</button></div>
+            </div>
+        </section>
+        </main>
 <?php else:?>
-<h1>You are not allowed here ... Please <a href="signin.php">signin</a> to Access this page</h1>
+<h1>You are not logged in, Please <a href="signin.php">signin</a> to Access this page</h1>
         
         <?php endif;?>
         <!-- <script src="" async defer></script> -->
@@ -167,12 +211,6 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/networth.js"></script>
-    <script>
-        function currency(){
-            document.querySelector(".currency_color").style.background= '#26255B';
-            document.querySelector(".currency_color").style.border= 'none';
-            
-        }
-    </script>
+
     </body>
 </html>
