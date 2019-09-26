@@ -21,14 +21,14 @@ if(isset($_POST['changePwd'])){
         $update_query= "UPDATE users set password='$newPassword' where email='$useremail'";
         $updated = mysqli_query($con,$update_query);
         if($updated){
-          header("Location: ../signup.php?error=pwdChanged");
+          header("Location: ../settings.php?error=pwdChanged");
           exit();
         }else{
-          header("Location: ../signup.php?error=pwdnotchanged");
+          header("Location: ../settings.php?error=pwdnotchanged");
         exit();
         }
       }else{
-        header("Location: ../signup.php?error=wrongoldpwd");
+        header("Location: ../settings.php?error=wrongoldpwd");
         exit();
       }
     }
