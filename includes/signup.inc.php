@@ -10,6 +10,17 @@ if (isset($_POST['regBtn']))
     $contact=$_POST['mobile'];
     $enc_password=md5($password);
     $a=date('Y-m-d');
+ //Validation 
+ if(empty($fullname) || empty($email) || empty($contact) || empty($Cpassword) ){
+  //note that i am making the errors unique ...
+  header("Location: ../signup.php?error=emptyfields");
+  exit();
+
+}elseif($password !== $Cpassword){
+  header("Location: ../signup.php?error=passwordmatch");
+  exit();
+
+} else{
 
     $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
     $result = mysqli_query($con, $user_check_query);
@@ -29,4 +40,4 @@ if (isset($_POST['regBtn']))
       header("Location: ../signin.php");
     }
   }
-  
+}  
