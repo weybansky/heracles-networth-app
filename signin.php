@@ -18,7 +18,15 @@
                  if (isset($_GET["error"])) {
                     if ($_GET['error']=='Invalid_Username_and_Password') {
                          echo '<p><p style = "text-align:center" class="text-danger"> Invalid username or password</p><p>';
-                        }  
+                        }elseif($_GET["error"]=="worked"){
+                         echo '<p><p style = "text-align:center" class="text-success"> PLease Check you email for your password</p><p>';
+
+                        }
+                        
+                        elseif($_GET["error"]=="notworked"){
+                            echo '<p><p style = "text-align:center" class="text-danger"> Something went wrong </p><p>';
+   
+                           }
                      }
                     ?>
                         <form action="includes/login.inc.php" method="post" class="form-container"onsubmit="return formValidation();" >
@@ -36,6 +44,9 @@
                                 </div> <br/>
                             <div class="button">
                                 <button class="form-control btn"  name="loginBtn"type="submit">Login</button>
+                            </div> <br/>
+                            <div class="button">
+                                <button class="form-control btn"  name="send"type="submit">forgot Password?</button>
                             </div> <br/>
                             <div class="register d-flex">
                                 <p class="mx-auto"> No account yet?
