@@ -17,7 +17,7 @@
                 <?php
                  if (isset($_GET["error"])) {
                     if ($_GET['error']=='Invalid_Username_and_Password') {
-                         echo '<center><h1> INVALID USERNAME AND PASSWORD</h1><center>';
+                         echo '<p><p style = "text-align:center" class="text-danger"> Invalid username or password</p><p>';
                         }  
                      }
                     ?>

@@ -14,14 +14,16 @@
     <div class="login-container">
             <div class="login-bg">
                     <div class="login-content">
-                 <?php
-                 if (isset($_GET["error"])) {
-                    if ($_GET['error']=='userAlreadyExist') {
-                         echo '<center style="color:white;"><h1> USER ALREADY EXIST</h1><center>';
-                        }    
-                     }
-                    ?>
-                        <form action="includes/signup.inc.php" method="post" class="signup-form animated slideInLeft" onsubmit="return formValidation()">
+                 
+                    <div class="signup-form animated slideInLeft">
+                        <?php
+                         if (isset($_GET["error"])) {
+                            if ($_GET['error']=='userAlreadyExist') {
+                                 echo '<p><p style = "text-align:center" class="text-danger"> User already exists</p><p>';
+                                }    
+                             }
+                        ?>
+                        <form action="includes/signup.inc.php" method="post"  onsubmit="return formValidation()">
                             <div class="form-header">
                                     <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
                                     <h1>Create Your Account</h1>
@@ -43,11 +45,12 @@
                             </div>
                             <button type="submit" name="regBtn"class="btn signup-btn">create account</button>
                             <div class="register d-flex">
-                                    <p class="mx-auto"> Dont have an account?
-                                        <a class="nav-item text-dark" href="signup.php">Register</a>
+                                    <p class="mx-auto"> Already have an account?
+                                        <a class="nav-item text-dark" href="signin.php">Signin</a>
                                     </p>
                                 </div>
-                        </form>         
+                        </form> 
+                    </div>        
                     </div>
                     
                 </div>
