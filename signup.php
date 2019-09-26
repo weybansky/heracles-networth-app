@@ -19,7 +19,7 @@
                         <?php
                          if (isset($_GET["error"])) {
                             if ($_GET['error']=='userAlreadyExist') {
-                                 echo '<p><p style = "text-align:center" class="text-danger"> User already exists</p><p>';
+                                 echo '<p><p style = "text-align:center" class="text-danger"> User already exists</p></p>';
                                 }    
                              }
                         ?>
