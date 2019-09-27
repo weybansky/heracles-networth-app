@@ -26,8 +26,7 @@
                         
                         elseif($_GET["error"]=="notworked"){
                             echo '<p><p style = "text-align:center" class="text-danger"> Something went wrong </p><p>';
-   
-                           }
+                              }
                      }
                     ?>
                         <form action="includes/login.inc.php" method="post" class="form-container" onsubmit="return formValidation();" >
