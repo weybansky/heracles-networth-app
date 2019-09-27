@@ -63,7 +63,6 @@ session_start();
             <div class="dashboard-contain">
                 <section class="nav-left">
                     <div class="nav-links">
-                        <a href="<?php echo $_SERVER["PHP_SELF"]?>"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/home-icon-silhouette_vzxxtu.svg" alt="home" width="30" height="30"></span>Home</a>
                         <a href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a>
                         <a href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
                         <div class="reset" onclick="_reset()"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</div>
@@ -116,44 +115,44 @@ session_start();
                                             <div class="col-xs col-sm col-d col-lg sub-heading">
                                                 <p>Cash</p>
                                                 <label for="checking account">Checking Account</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account"  >
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="checking account"  >
                                                 <label for="savings account">Savings Account</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account"  >
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="savings account"  >
                                                 <label for="text">Savings Bonds</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
                                                 <label for="cd's">CDs</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's"  >
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="cd's"  >
                                                 <label for="other">Other</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other"  >
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="other"  >
                                             </div>
                                             <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Insurance</p>
                                             <label for="insurance">Insurance Value</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="checking account"  >
                                             <p>Market value of Home(s)</p>
                                             <label for="primary residence">Primary Residence</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="savings account"  >
                                             <label for="rental">Rental/Vacation properties</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
                                             <p>Retirement Savings</p>
                                             <label for="pensions">Pensions</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="pensions"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="pensions"  >
                                              
                                         </div>
                                         <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Property</p>
                                             
                                             <label for="cars">Automobiles</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cars"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="cars"  >
 
                                             <label for="savings bonds">House Furnishing</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
                                             <label for="jewellery">Jewellery</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="cd's"  >
                                             <label for="other">Other</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="other"  >
                                              <label for="value of business" id="business-value">Value of Business you own</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="cd's"  >
                                         </div>
                                         
                                         
@@ -161,11 +160,11 @@ session_start();
                                         <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Other Investments</p>
                                             <label for="stocks">Stocks</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="checking account"  >
                                             <label for="mutual funds">Mutual Funds</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="savings account"  >
                                             <label for="others">Others</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
                                             
                                         </div>
                                     <!-- </div> -->
