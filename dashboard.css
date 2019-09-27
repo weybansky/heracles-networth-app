@@ -9,6 +9,7 @@ body, html {
     width: 100%;
     background: #fff;
     font-family: 'Open Sans', sans-serif;
+    min-width: 350px;
 }
 
 .container {
@@ -64,7 +65,7 @@ body, html {
     font-weight:500;
     /* font-family:gabriola; */
     color: #26255B;
-    width:fit-content;
+    width:contain;
 }
 
 .header > p, .header > p + span {
@@ -306,4 +307,8 @@ input:focus {
 @media only screen and (max-width: 768px) {
     .small_device {display: contents;}
     .nav-left{visibility:hidden;}
+    #animate_name{font-size:20px;
+                margin-top:50px;
+                padding-left:40px;            
+    }
   } 
