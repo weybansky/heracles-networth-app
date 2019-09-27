@@ -8,8 +8,32 @@ if (isset($_POST['regBtn']))
     $email=$_POST['email'];
     $password=$_POST['password'];
     $contact=$_POST['mobile'];
+    $Cpassword = $_POST['confirmPassword'];
     $enc_password=md5($password);
     $a=date('Y-m-d');
+
+    if( empty($Cpassword)|| empty($email) || empty($password) || empty($fullname) || empty($contact)){
+      header("Location: ../signup.php?error=emptyfields");
+      exit();
+    }elseif($password !== $Cpassword){
+      header("Location: ../signup.php?error=pwd");
+      exit();
+    }elseif(!preg_match("/^[0-9]+$/", $contact)|| strlen( $contact) > 17 || strlen($contact) < 6){
+      header("Location: ../signup.php?error=num");
+      exit();
+    }
+
+    elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email)<6){
+      header("Location: ../signup.php?error=emails");
+      exit();
+    }
+    elseif(!preg_match("/^[a-zA-Z0-9]*$/", $fullname || strlen($fullname)<5)){
+      header("Location: ../signup.php?error=name");
+      exit();
+    }
+    else {
+        
+      
 
     $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
     $result = mysqli_query($con, $user_check_query);
@@ -29,4 +53,4 @@ if (isset($_POST['regBtn']))
       header("Location: ../signin.php");
     }
   }
-  
+}

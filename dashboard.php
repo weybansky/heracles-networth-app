@@ -14,7 +14,7 @@ session_start();
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
-        <meta name="description" content="">
+        <meta name="description" content="Networth calculator by Team Heracles">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,30 +23,42 @@ session_start();
         <link rel="stylesheet" href="dashboard.css">
         
     </head>
-    <body>
+    <body onload = "callName()">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>&& $_SESSION["loggedin"] == true
         <![endif]-->
 <?php if (isset($_SESSION["loggedin"])): ?>
-        <main class="container-fluid">
-        <header class="nav-header">
-                <span><a href="#">Heracles</a></span>
+        <main class="container-fluid" style = 'padding-left:0;padding-right:0;'>
+        <header class="nav-header" style = 'left:0px;'>
+                <!-- <span><a href="#">Heracles</a></span> -->
+                <!-- <span  id = 'user'><a href="#"> <?php echo $_SESSION['name']?></a></span> -->
                 <div class="summary" >
                         <div class="networth"  >
-                            <p>Your Net worth</p>
+                            <p class ='box'>Your Net worth</p>
                             <span id="_networth">00.00</span>
                         </div>
                         <div class="assets">
-                            <p>Your Assets</p>
+                            <p class = 'box'>Your Assets</p>
                             <span id="assetSum">00.00</span>
                         </div>
                         <div class="liability">
-                            <p>Your Liability</p>
+                            <p class='box'>Your Liability</p>
                             <span id="liabilitySum">- 00.00</span>
                         </div>
                 </div>
-                <span><a href="#">Welcome <?php echo $_SESSION['name']?></a></span>
         </header>
+                <div class='small_device'>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Options
+                    </button>
+                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item " onclick="_reset()"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</div>
+                    <a class="dropdown-item" href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a>
+                    <a class="dropdown-item" href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
+                </div>
+            </div>
+            </div>
 
             <div class="dashboard-contain">
                 <section class="nav-left">
@@ -54,6 +66,8 @@ session_start();
                         <a href="<?php echo $_SERVER["PHP_SELF"]?>"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/home-icon-silhouette_vzxxtu.svg" alt="home" width="30" height="30"></span>Home</a>
                         <a href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a>
                         <a href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
+                        <div class="reset" onclick="_reset()"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</div>
+                    </div>
                     </div>
                 </section>
                 <section class="dashboard-header">
@@ -61,20 +75,20 @@ session_start();
                     <?php
                  if (isset($_GET["error"])) {
                     if ($_GET['error']=='Logged_In_successfully') {
-                         echo '<center><h1> Successfully LoggedIn</h1><center>';
+                        //  echo '<center><h1> Successfully LoggedIn</h1><center>';
                         }else{
-                         echo '<center><h1> You are already LoggedIn</h1><center>';
+                        //  echo '<center><h1> You are already LoggedIn</h1><center>';
 
                         }  
                      }
                     ?>
-                        <span>
+                        <!-- <span>
                             <p>
                             <img src="https://res.cloudinary.com/benjee/image/upload/v1569337224/home-icon-silhouette_vzxxtu.svg" alt="home" width="30" height="30">
                             Home
                             </p>
-                        </span>
-                        <span>Welcome,<?php echo $_SESSION['name']?></span>
+                        </span> -->
+                        <span id = 'animate_name' class=''>Welcome, <?php echo $_SESSION['name']?></span>
 
                     </div>
                     <!-- <div class="summary">
@@ -91,126 +105,130 @@ session_start();
                                 <span>- 00.00</span>
                             </div>
                         </div> -->
-                        <div class="dashboard-content">
-                                <div class="calculate">
-                                    <div>
-                                        <h5 class="assets-header">Assets</h5>
-                                        <span class="currency_square">
-                                        </span>
-                                        <div class="wrapper">
-                                            <div class="cash">
+                    </section>
+                    <section class='dashboard-header'>
+                        <!-- <div class="dashboard-content"> -->
+                            <div>
+                                <h5 class="assets-header">Assets</h5>
+                            </div>
+                                <div class="row">
+                                        <!-- <div class=""> -->
+                                            <div class="col-xs col-sm col-d col-lg sub-heading">
                                                 <p>Cash</p>
                                                 <label for="checking account">Checking Account</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account"  >
                                                 <label for="savings account">Savings Account</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account"  >
                                                 <label for="text">Savings Bonds</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
                                                 <label for="cd's">CDs</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's"  >
                                                 <label for="other">Other</label>
-                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other" placeholder="N 0.00">
+                                                 <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other"  >
                                             </div>
-            
-                                        <div class="cash">
+                                            <div class="col-xs col-sm col-d col-lg sub-heading">
+                                            <p>Insurance</p>
+                                            <label for="insurance">Insurance Value</label>
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account"  >
+                                            <p>Market value of Home(s)</p>
+                                            <label for="primary residence">Primary Residence</label>
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account"  >
+                                            <label for="rental">Rental/Vacation properties</label>
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
+                                            <p>Retirement Savings</p>
+                                            <label for="pensions">Pensions</label>
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="pensions"  >
+                                             
+                                        </div>
+                                        <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Property</p>
                                             
                                             <label for="cars">Automobiles</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cars" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cars"  >
 
                                             <label for="savings bonds">House Furnishing</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
                                             <label for="jewellery">Jewellery</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's"  >
                                             <label for="other">Other</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="other"  >
+                                             <label for="value of business" id="business-value">Value of Business you own</label>
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's"  >
                                         </div>
                                         
-                                        <div class="cash">
-                                            <p>Insurance</p>
-                                            <label for="insurance">Insurance Value</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account" placeholder="N 0.00">
-                                            <p>Market value of Home(s)</p>
-                                            <label for="primary residence">Primary Residence</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account" placeholder="N 0.00">
-                                            <label for="rental">Rental/Vacation properties</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
-                                            <p>Retirement Savings</p>
-                                            <label for="pensions">Pensions</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="pensions" placeholder="N 0.00">
-                                        </div>
+                                        
         
-                                        <div class="cash">
+                                        <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Other Investments</p>
                                             <label for="stocks">Stocks</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="checking account"  >
                                             <label for="mutual funds">Mutual Funds</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings account"  >
                                             <label for="others">Others</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds" placeholder="N 0.00">
-                                            <label for="value of business" id="business-value">Value of Business you own</label>
-                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="cd's" placeholder="N 0.00">
+                                             <input type = 'number' class = 'asset' onkeyup = 'inputValidate() ; displayNetworth()'() displayNetworth()   name="savings bonds"  >
+                                            
                                         </div>
-                                    </div>
+                                    <!-- </div> -->
                             </div>
                 </section>  
-        </main>
-        <section class="dashboard-header">
-            <div>
-                <h5 class="assets-header">Liability</h5>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-sm-12 sub-heading">
-                    Balance due on debt
+        
+
+            <section class="dashboard-header">
+                <div>
+                    <h5 class="assets-header">Liability</h5>
                 </div>
-                <div class="col-lg-4 col-sm-12 sub-heading">
-                    Bills due
+                <div class="row">
+                    <div class="col-xs col-sm col-md col-lg sub-heading">
+                        <div>
+                            Balance due on debt
+                        </div>
+                        <div>
+                            <label for="student loan">Student loan</label><br>
+                            <input type = 'number' class ='_liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="student loan"  >
+                        </div>
+                        <div>
+                            <label for="mortage">Mortages</label><br>
+                            <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="mortage"  >
+                        </div>
+                        <div>
+                            <label for="other loans">Other loans</label><br>
+                            <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="other loans"  >
+                        </div>
+                        <div>
+                            <label for="home equity loan">Home equity loans</label><br>
+                            <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()'  id="home equity loan"  >
+                        </div>
+                        <div>
+                            <label for="auto loans">Auto loans</label><br>
+                            <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="auto loans"  >
+                        </div>
+                    </div>
+                    <div class="col-xs col-sm col-md col-lg sub-heading">
+                        <div>    
+                            Bills due
+                        </div>
+                        <div>
+                            <label for="house hold utility">House hold utility</label><br>
+                            <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="house hold utility"  >
+                        </div>
+                        <div>
+                            <label for="taxes due">Taxes due</label><br>
+                            <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="taxes due"  >
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-12">
-                    <label for="student loan">Student loan</label><br>
-                    <input type = 'number' class ='_liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="student loan" placeholder="N 0.00">
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <label for="home equity loan">Home equity loans</label><br>
-                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()'  id="home equity loan" placeholder="N 0.00">
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <label for="house hold utility">House hold utility</label><br>
-                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="house hold utility" placeholder="N 0.00">
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <label for="mortage">Mortages</label><br>
-                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="mortage" placeholder="N 0.00">
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <label for="auto loans">Auto loans</label><br>
-                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="auto loans" placeholder="N 0.00">
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <label for="taxes due">Taxes due</label><br>
-                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="taxes due" placeholder="N 0.00">
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <label for="other loans">Other loans</label><br>
-                    <input type = 'number'class =' _liability' onkeyup = 'liabilityValidate() ; displayNetworth()' id="other loans" placeholder="N 0.00">
-                </div>
-            </div>
-            </div>
-            <div class="reset" onclick="_reset()"><button><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</button></div>
-            </div>
-        </section>
-        </main>
+            </section>
+            
+    </main>
 <?php else:?>
 <h1>You are not logged in, Please <a href="signin.php">signin</a> to Access this page</h1>
         
         <?php endif;?>
         <!-- <script src="" async defer></script> -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/networth.js"></script>
-
     </body>
 </html>

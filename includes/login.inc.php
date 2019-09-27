@@ -40,3 +40,28 @@ if (isset($_POST['loginBtn'])) {
   
   
 
+//forgot password
+if(isset($_POST['send']))
+{
+$Yemail = $_POST['email'];
+$row1=mysqli_query($con,"select email,password from users where email='$Yemail'");
+$row2=mysqli_fetch_array($row1);
+if($row2>0)
+{
+$email = $row2['email'];
+$subject = "Information about your password";
+$password=$row2['password'];
+$message = "Your password is ".$password;
+$success=mail($email, $subject, $message, "From: $email");
+
+if($success){header("location:../signin.php?error=worked");
+exit();}
+
+
+}
+else
+{
+  header("location:../signin.php?error=notworked");
+  exit();
+}
+}
