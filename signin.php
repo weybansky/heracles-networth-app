@@ -32,15 +32,15 @@
                         <form action="includes/login.inc.php" method="post" class="form-container"onsubmit="return formValidation();" >
                             <div class="form-header">
                                 <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
-                                <h1>Login Your Account</h1>
+                                <h1>Login</h1>
                             </div>
                             <div class="email-content">
-                                <label for="email" class="pt-2">EMAIL ADDRESS</label>
-                                <input type="email" id="email" class="form-control fc" name="email">
+                                <!-- <label for="email" class="pt-2">EMAIL ADDRESS</label> -->
+                                <input type="email" id="email" class="form-control fc" name="email" placeholder = 'Email address'>
                             </div> <br/>
                             <div class="pwrd-content">
-                                    <label for="password">PASSWORD</label>
-                                    <input type="password" id="password"name="password"class="form-control fc">
+                                    <!-- <label for="password">PASSWORD</label> -->
+                                    <input type="password" id="password"name="password"class="form-control fc" placeholder = 'Password'>
                                 </div> <br/>
                             <div class="button">
                                 <button class="form-control btn"  name="loginBtn"type="submit">Login</button>
@@ -84,7 +84,7 @@
     </div> -->
    </div>
    
-   <script src="js\signin.js"></script>
+   <script src="js/signin.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 

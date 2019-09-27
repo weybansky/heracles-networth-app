@@ -1,8 +1,8 @@
 function formValidation() {
   "use strict";
-  var name = document.getElementById('firstname');
+  var name = document.getElementById('fullname');
   // document.forms["SignupForm"]["name"];
-  var lastname = document.getElementById('lastname');
+  // var lastname = document.getElementById('lastname');
   // document.forms["SignupForm"]["lastname"];
   var email = document.getElementById('email');
   // document.forms["SignupForm"]["email"];
@@ -14,7 +14,7 @@ function formValidation() {
   // document.forms["SignupForm"]["Cpassword"];
 
   var nameLen = name.value.length;
-  var lastnameLen = lastname.value.length;
+  // var lastnameLen = lastname.value.length;
   var emailLen = email.value.length;
   var phoneLen = phone.value.length;
   var passwordLen = password.value.length;
@@ -28,8 +28,8 @@ function formValidation() {
   // var mailFormat =;
   // ;
 
-  if (nameLen < 3) {
-    alert("Fullname should be at least 3 characters long");
+  if (nameLen < 5) {
+    alert("Fullname should be at least 5 characters long");
     name.focus();
     return false;
   }
@@ -39,7 +39,7 @@ function formValidation() {
   //   lastname.focus();
   //   return false;
   // }
-  if (!name.value.match(letters)) {
+  else if (!name.value.match(letters)) {
     alert("Fullname should be alphabet characters only");
     name.focus();
     return false;
@@ -49,27 +49,27 @@ function formValidation() {
   //   lastname.focus();
   //   return false;
   // }
-  if (emailLen == 0 || atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= emailLen) {
+  else if (emailLen == 0 || atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= emailLen) {
     alert("Please enter a valid email address");
     email.focus();
     return false;
   }
-  if (phoneLen !== 11 || !phone.value.match(numbers)) {
+  else if (phoneLen !== 11 || !phone.value.match(numbers)) {
     alert("Please enter a valid phone numer, 11 digits only eg 09012345678");
     phone.focus();
     return false;
   }
-  if (passwordLen < 5) {
+  else if (passwordLen < 5) {
     alert("Password should be at least 5 charcaters long");
     password.focus();
     return false;
   }
-  if (cpasswordLen == 0 || cpassword.value !== password.value) {
+  else if (cpasswordLen == 0 || cpassword.value !== password.value) {
     alert("Your password does not match");
     cpassword.focus();
     return false;
   }
-
+else{
   return true;
-
+}
 }
