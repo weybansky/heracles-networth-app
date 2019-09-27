@@ -18,7 +18,8 @@
                  if (isset($_GET["error"])) {
                     if ($_GET['error']=='Invalid_Username_and_Password') {
                          echo '<p><p style = "text-align:center" class="text-danger"> Invalid username or password</p><p>';
-                        }elseif($_GET["error"]=="worked"){
+                        }
+                        elseif($_GET["error"]=="worked"){
                          echo '<p><p style = "text-align:center" class="text-success"> PLease Check you email for your password</p><p>';
 
                         }
@@ -29,10 +30,10 @@
                            }
                      }
                     ?>
-                        <form action="includes/login.inc.php" method="post" class="form-container"onsubmit="return formValidation();" >
+                        <form action="includes/login.inc.php" method="post" class="form-container" onsubmit="return formValidation();" >
                             <div class="form-header">
                                 <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
-                                <h1>Login</h1>
+                                <h1>Login to your account</h1>
                             </div>
                             <div class="email-content">
                                 <!-- <label for="email" class="pt-2">EMAIL ADDRESS</label> -->

@@ -1,5 +1,9 @@
 function formValidation() {
-  "use strict";
+  
+  // e.preventDefault();
+  // e.submit();
+  // return false;
+  // "use strict";
   var name = document.getElementById('fullname');
   // document.forms["SignupForm"]["name"];
   // var lastname = document.getElementById('lastname');
@@ -22,6 +26,14 @@ function formValidation() {
   var atposition = email.value.indexOf('@');
   var dotposition = email.value.lastIndexOf('.');
 
+  //name value
+  var nameVal = removeSpace(name.value);
+  
+  //remove empty spaces in input name
+  function removeSpace(name){
+    return name.split(' ').join('');
+  }
+
   //regex
   var letters = /^[A-Za-z]+$/;
   var numbers = /^[0-9]+$/;
@@ -39,7 +51,7 @@ function formValidation() {
   //   lastname.focus();
   //   return false;
   // }
-  else if (!name.value.match(letters)) {
+  else if (!nameVal.match(letters)) {
     alert("Fullname should be alphabet characters only");
     name.focus();
     return false;
@@ -70,6 +82,7 @@ function formValidation() {
     return false;
   }
 else{
+  // document.getElementById('submit_form').onsubmit();
   return true;
 }
 }
