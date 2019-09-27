@@ -65,9 +65,9 @@ function displayNetworth(){
     document.getElementById('_networth').innerHTML = (sum - liabilitySum).toFixed(2);
 }
 function _reset(){
-    document.getElementById('liabilitySum').innerHTML = '' ;
-    document.getElementById('_networth').innerHTML = '' ; 
-    document.getElementById('assetSum').innerHTML = '';
+    document.getElementById('liabilitySum').innerHTML = 0 ;
+    document.getElementById('_networth').innerHTML = 0 ; 
+    document.getElementById('assetSum').innerHTML = 0 ;
     var x = document.getElementsByClassName('asset');
     for(var i = 0; i < x.length ; i++ ){
         x[i].value = '' ;
