@@ -329,8 +329,8 @@ input:focus {
         FONT-WEIGHT: 100;
         margin: 50px;
         margin-left: 30%;
-        width: 100%;
-        padding: 30%;
+        /* width: 100%; */
+        padding: 5%;
         overflow: scroll;
         border-radius: 20px
                 }          
