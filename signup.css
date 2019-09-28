@@ -6,135 +6,114 @@
     box-sizing:border-box;
     margin: 0px;
     padding: 0px;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif !important;
 }
-
-body {
-    background-color: #5a4fcf;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+::-webkit-scrollbar{
+    display: none;
 }
-
 /* The class .signup is used to make all style affect the signup page only */
-.signup form {
-    background: white;
-    max-height: 1000px; 
-    border-radius: 25px;
-    padding: 25px 50px;
-    margin: 25% 50px;
-}
-
-.signup form h1 {
-    color: #5a4fcf;
-    font-weight: bolder;
-    margin: 10px 0px 20px;
-}
-
-.signup form p {
-    color: black;
-    text-align: center;
-    margin: 10px;
-    }
-    
-.signup form a{
-    text-decoration: underline;
-    font-weight:bold;
-    color: #5a4fcf;    
-}
-
-.signup label {
-    color: #5a4fcf;
-}
-
-.signup input {
-border: none;
-border-bottom: 2px solid #5a4fcf;
-display: block;
-outline: none;
-padding: 10px 0px 1px;
-margin: 10px 0px 25px;
-width: 90%;
-color:white;
-font-size: 20px;
-}
-
-.signup input:focus {
-outline: none;
-color: #5a4fcf;
-} 
-
-.signup input[type=submit]{
-    border: none;
-    border-radius: 25px;
-    display: block;
-    background: #5a4fcf;
-    padding: 10px 15px;
-    width: 50%; 
-    color: white;
-    text-weight: bolder;
-    margin: 15px auto 10px;
-    }
-
-.signup-container{
-    min-height: 100px;
-}
-.login-bg{
-    background: url('https://res.cloudinary.com/benjee/image/upload/v1569283278/Vector_dgyn22.png') no-repeat center;
-    background-size: cover;
-    width: 90vw;
-    height: 100vh;
-    
-}
 .signup-form{
-    text-align: center;
-    background-color: #ffffff;
+    background: white;
+    width: 500px;
     border-radius: 30px;
-    height: 70vh;
-    width:fit-content ;
-    padding: 5%;
-    margin: 10%;
+    padding:70px 80px;
+    margin: 45px 80px;
 }
-.login-container{
-    padding:0;
-    margin:0;
+.form-header{
+    margin-top: 0;
+    padding: 0 30px;
+}
+.heracles-logo{
+    padding-top: 0px;
+    width: 200px;
+    margin: 20px 10px;
 }
 .form-header h1{
-    font-size: 25px;
-    margin-bottom: 20%; 
-}
-.form-group{
-    display: flex;
-    font-size: 16px;
+    padding: 10px; 
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 .login-control{
-    border-bottom: 2px solid #26255B;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background: none;
-    outline: none;
-    width: 80%;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #26255B;
+    transition-property: border-bottom;
 }
-.signup-btn{
+.login-control:focus{
+    outline: none;
+    box-shadow: none;
+    border-bottom: 3px solid #26255B;
+}
+.btn{
     width: 80%;
+    margin: 10px 20px;
+    background-color:  #26255B;
     border-radius: 20px;
-    background-color: #26255B;
+    color: #ffffff;
+    font-weight: 700;
     border: #26255B;
 }
-.signup-btn:hover{
-    background-color: rgb(20, 20, 48);
+.btn:hover{
+    background-color: #26255B;
+    color: #fff;
+    outline: none;
 }
-.signup-content{
-    margin: 2% 0%;
-    padding: 4% 0;
+.btn:active{
+    background-color: #ffffff;
+    color: #26255B;
 }
-.signup-image{
-    height: 80%;
+.text-dark{
+    font-weight: 700; 
+    color: #26255B;
 }
-.login-link{
-    color:#26255B;
+.text-dark:hover{
+    text-decoration: none;
 }
-.login-link:hover{
-  color: rgb(20, 20, 48);  
+.input-control{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.input-control input{
+    width: 100%;
+}
+
+@media(max-width:720px){
+    body{
+        text-align: center;
+    }
+    .signup-form{
+        width: 420px;
+        margin: 10% 20px;
+    }
+    .heracles-logo{
+        width: 200px;
+        margin: 50px 0px;
+    }
+    .form-header h1{
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .register{
+        font-size: 14px;
+    }
+    .login-control{
+        font-size: 11px;
+    }
+    
+}
+
+@media(min-width:780px){
+    body{
+        background: url('https://res.cloudinary.com/benjee/image/upload/v1569458979/Group_2_1_iznlwy.png') no-repeat;
+        background-size: cover;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 }

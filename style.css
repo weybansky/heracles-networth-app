@@ -21,7 +21,7 @@ body, html {
 .container {
     width: 100%;
     height: 300px;
-    background: url("/images/Vector.png");
+    background: url("images/Vector.png");
     background-position: left top;
     position: fixed;
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@ footer {
     height: 40px;
     position: fixed;
     bottom: 0;
-    background: url("/images/Vector.png");
+    background: url("images/Vector.png");
     background-position: top left;
     background-repeat: no-repeat;
     background-size: contain;
@@ -105,11 +105,12 @@ footer {
     }
 
     footer {
-        width: 100%;
+        width: 50%;
         height: 50px;
         position: fixed;
         bottom: 0;
-        background: url("/images/Vector.png");
+        right:1px;
+        background: url("images/Vector.png");
         background-position: top left;
         background-repeat: no-repeat;
         background-size: contain;
@@ -125,11 +126,13 @@ footer {
     }
     
     footer {
-        width: 100%;
+        width: 50%;
         height: 250px;
         position: fixed;
         bottom: 0;
-        background: url("/images/landing_page_bottom_component_y1evvf.svg");
+        right:1px;
+        right:1px;
+        background: url("images/landing_page_bottom_component_y1evvf.svg");
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: contain;
@@ -145,11 +148,12 @@ footer {
     }
     
     footer {
-        width: 100%;
+        width: 50%;
         height: 350px;
         position: fixed;
         bottom: 0;
-        background: url("/images/landing_page_bottom_component_y1evvf.svg");
+        right:1px;
+        background: url("images/landing_page_bottom_component_y1evvf.svg");
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: contain;
@@ -162,7 +166,7 @@ footer {
 .container {
     width: 100%;
     height: 300px;
-    background: url("/images/Vector.png");
+    background: url("images/Vector.png");
     background-position: left top;
     position: fixed;
     background-repeat: no-repeat;
@@ -180,11 +184,12 @@ footer {
     }
     
     footer {
-        width: 100%;
+        width: 50%;
         height: 450px;
         position: fixed;
         bottom: 0;
-        background: url("/images/landing_page_bottom_component_y1evvf.svg");
+        right:0px;
+        background: url("images/landing_page_bottom_component_y1evvf.svg");
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: contain;
