@@ -1,127 +1,56 @@
 <?php
-//Make sure that u put your own local db info and create it with the following 
-#id set to int auto increment
-#username set to VARCHAR 255
-#email set to VARCHAR 255
-#pwd (meaning password)
-$servername = "";
-$dbUsername="";
-$dbPassword = "";
-$dbName ="";
+require_once('dbconnection.php');
+ob_start();
+session_start();
+if (isset($_POST['regBtn']))
+  {
+    $fullname=$_POST['fullname'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $contact=$_POST['mobile'];
+    $Cpassword = $_POST['confirmPassword'];
+    $enc_password=md5($password);
+    $a=date('Y-m-d');
 
-$conn = mysqli_connect($servername, $dbUsername, $dbPassword,$dbName );
-
-if (!$conn) {
-  die("Connection failed".mysqli_connect_error());
-}
-if (isset($_POST['regBtn'])){
-
-  $username = $_POST['username'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $confirmPassword = $_POST['confirmPassword'];
-
-
-  
-
-  if (empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
-    array_push($errors, "One or more fields cannot be empty");
-    exit();
-  }
-  // elseif((!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)){
-  //   header("Location:  ../signup.php?error=invalidemailsandusername");
-  //   exit();
-  // }
-  
-  elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    array_push($errors, "Please input a correct Email");
-    exit();
-  }
-  elseif(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
-    array_push($errors, "please input a correct Username ");
-    exit();
-  }
-  elseif($password !== $confirmPassword){ 
-     array_push($errors, "Password Mismatch");
-     exit();
+    if( empty($Cpassword)|| empty($email) || empty($password) || empty($fullname) || empty($contact)){
+      header("Location: ../signup.php?error=emptyfields");
+      exit();
+    }elseif($password !== $Cpassword){
+      header("Location: ../signup.php?error=pwd");
+      exit();
+    }elseif(!preg_match("/^[0-9]+$/", $contact)|| strlen( $contact) > 17 || strlen($contact) < 6){
+      header("Location: ../signup.php?error=num");
+      exit();
     }
-    else{
-      $sql = "SELECT * FROM users WHERE email=?";
-      $stmt = mysqli_stmt_init($conn);
-      if(!mysqli_stmt_prepare($stmt, $sql)){
-        array_push($errors, "Connection to db error");
-        exit();
-      }
-      else{
-        mysqli_stmt_bind_param($stmt,"s", $email);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
-        $resultCheck = mysqli_stmt_num_rows();
-        if ($resultCheck>0) {
-          array_push($errors, "User email already taken ");
-          exit();
-        }else{
-          $sql = "INSERT INTO users (username, email, pwd) VALUES (?,?,?)";
-          $stmt = mysqli_stmt_init($conn);
-          if(!mysqli_stmt_prepare($stmt, $sql)){
-            array_push($errors, "Sql error");
-            exit();
-          }
-          else{
-            //hashing password using bcrypt 
-            $hashedPwd = password_hash($password,PASSWORD_DEFAULT);
-            mysqli_stmt_bind_param($stmt,"sss", $username,$email,$hashedPwd);
-            mysqli_stmt_execute($stmt);
-            array_push($errors, "Successfully signed in");
-            exit();              
-            header("Location: login.php"); 
-          }
-        }
-      }
-    }
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
-  }
-  else{
-    header("Location: ../signup,php");
-    exit();    
-  }
-  ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <main>
 
-  <section>
-    <h1>SignUp</h1>
-   <?php
-    // if(isset($_GET['error'])){
-    //   if($_GET){
-    //    echo '<p> Fill in all fields';
-    //   }elseif($_GET['error'] == "invalid..."){
-    //     echo "...";
-    //   }
-    // }elseif(){
+    elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email)<6){
+      header("Location: ../signup.php?error=emails");
+      exit();
+    }
+    elseif(!preg_match("/^[a-zA-Z0-9]*$/", $fullname || strlen($fullname)<5)){
+      header("Location: ../signup.php?error=name");
+      exit();
+    }
+    else {
+        
       
-    // }
-   ?>
-   <html>
-   <main>
-   <section>
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <input type="text" name="username" placeholder ="Username">
-        <input type="text" name="email" placeholder ="E-mail">
-        <input type="password" name="password" id="" placeholder='Password...'>
-        <input type="password" name="confirmpassword" id="" placeholder='Repeat Password...'>
-        <button type="submit" name="regBtn">Submit</button>
-      </form>
-  </section>
-</main>
-</body>
-</html>
+
+    $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+    $result = mysqli_query($con, $user_check_query);
+    $user = mysqli_fetch_assoc($result);
+
+  	if ($user) { // if user exists
+    	if ($user['email'] === $email) {
+        header("Location: ../signup.php?error=userAlreadyExist");
+        exit();
+    }
+  }
+
+    
+    $msg=mysqli_query($con,"insert into users(fullname,email,password,contactno,posting_date) values('$fullname','$email','$enc_password','$contact','$a')");
+    if($msg)
+    {
+      header("Location: ../signin.php");
+    }
+  }
+}

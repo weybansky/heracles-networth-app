@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+  $msg = "You are already logged in";
+  header("location: dashboard.php?message=$msg");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +32,8 @@
                 <p>That's your net worth, Calculate it here.</p>
             </article>
             <div class="action">
-                <a href="#" id="get-started">Get started</a>
-                <a href="#" id="login">Log In</a>
+                <a href="signup.php" id="get-started">Get started</a>
+                <a href="signin.php" id="login">Log In</a>
             </div>
         </section>
     </main>

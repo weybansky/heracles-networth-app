@@ -1,74 +1,67 @@
 <?php
-// make that use the same credential as the signup db
-$servername = "";
-$dbUsername="";
-//if i get any error.. i will check the password and change it 
-$dbPassword ="";
-$dbName ="";
-
-$conn = mysqli_connect($servername, $dbUsername, $dbPassword,$dbName );
-
-if (!$conn) {
-  die("Connection failed".mysqli_connect_error());
+require_once('dbconnection.php');
+session_start();
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+  $msg = "You are already logged in";
+  header("location:../dashboard.php?error=You are already Loggedin");
 }
-//assuming the name of the submit button is signup-submit
 if (isset($_POST['loginBtn'])) {
+  $password=$_POST['password'];
+  $dec_password=md5($password);
+  $useremail=$_POST['email'];
+  $ret= mysqli_query($con,"SELECT * FROM users WHERE email='$useremail' and password='$dec_password'");
+  $num=mysqli_fetch_array($ret);
+  if($num>0)
+  {//we are going to use this part for when we want to implement "remember me"
+  //   if (isset($_POST["remember"])) {
+  //     setcookie("heraclesuser", $_POST["fullname"], time() + (30 * 24 * 60 * 60));
+  // } else {
+  //     if (isset($_COOKIE["heraclesuser"])) {
+  //         setcookie("heraclesuser", "");
+  //     }
+  $extra="welcome.php";
+  $_SESSION['loggedin'] = true;
+  $_SESSION['login']=$_POST['email'];
+  $_SESSION['id']=$num['id'];
+  $_SESSION['name']=$num['fullname'];
+  $host=$_SERVER['HTTP_HOST'];
+  
+  $msg = "Logged in successfully";
+  header("location:../dashboard.php?error=Logged_In_successfully");
 
-
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  if (empty($mailuid) || empty($password)) {
-		array_push($errors, "Please fill in your credentials");
-     header('Location: ../error.php');
- }
-  else{
-   $sql="SELECT * FROM users WHERE   email=?";
-   $stmt = mysqli_stmt_init($conn);
-   if(!mysqli_stmt_prepare($stmt,$sql){
-		array_push($errors, "database error");
-     exit();
-   }else{
-     mysqli_stmt_bind_param($stmt, "s",  $email);
-     mysqli_stmt_execute($stmt);
-     $result =  mysqli_stmt_get_result($stmt);
-     if($row = mysqli_fetch_assoc($result)){
-         $pwdCheck= password_verify($password, $row['pwd']);
-       if ($pwdCheck){
-    		array_push($errors, "Wrong password");
-         exit();   
-       }else if($pwdCheck == true){
-         session_start();
-         $_SESSION['userId']= $row['id'];
-         $_SESSION['username']= $row['username'];
-     		array_push($errors, "Login Successful");
-        
-         header("Location: ../index.php?login=successs");
-          exit();
-       }
-     }else{
-    		array_push($errors, "Email exists");
-
-       header("Location: ../error.php?error=error");
-       exit();  
-     }
-   }
+  exit();
   }
- } else{
-   header("Location: ../signup.php");
-   exit();  
- }
- ?>
- 
- <html>
-   <main>
-   <section>
- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-   <input type="text" name="email" placeholder ="E-mail">
-   <input type="password" name="password" id="" placeholder='Password...'>
-   <button type="submit" name="loginBtn">Submit</button>
- </form>
-</section>
-</main>
-</body>
-</html>
+  else
+  {
+  header("location:../signin.php?error=Invalid_Username_and_Password");
+  exit();
+  }
+  }
+  
+  
+
+//forgot password
+if(isset($_POST['send']))
+{
+$Yemail = $_POST['email'];
+$row1=mysqli_query($con,"select email,password from users where email='$Yemail'");
+$row2=mysqli_fetch_array($row1);
+if($row2>0)
+{
+$email = $row2['email'];
+$subject = "Information about your password";
+$password=$row2['password'];
+$message = "Your password is ".$password;
+$success=mail($email, $subject, $message, "From: $email");
+
+if($success){header("location:../signin.php?error=worked");
+exit();}
+
+
+}
+else
+{
+  header("location:../signin.php?error=notworked");
+  exit();
+}
+}
