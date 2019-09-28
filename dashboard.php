@@ -69,7 +69,7 @@ session_start();
                     </div>
                     </div>
                 </section>
-                <section class="dashboard-header">
+                <section class="dashboard-header clear_bg">
                     <div class="header">
                     <?php
                  if (isset($_GET["error"])) {
