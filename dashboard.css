@@ -24,6 +24,7 @@ body, html {
     position: fixed;
     top: 0;
     display: flex;
+    z-index:4;
     justify-content: space-between;
     align-items: center;
     color: #fff;
@@ -40,6 +41,7 @@ body, html {
     position: fixed;
     top:15vw;
     left:1vw;
+    z-index:4;
 }
 .dashboard-header{
     margin: 50px;
@@ -146,6 +148,7 @@ span > a {
     height: fit-content;
     font-size: 2vw;
     font-weight: 500;
+    cursor: not-allowed;
 }
 
 .calculate {
@@ -192,10 +195,12 @@ input {
     border: 0;
     border-bottom: 2px solid #26255B;
     padding-bottom: 3px;
-    width: 150px;
+    width: 200px;
+    z-index:100;
     display:block;
     background-color: #fff0;
     background-blend-mode: screen;
+    background: rgba(38,37,91,0.06);
 }
 
 input:focus {
