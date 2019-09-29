@@ -110,9 +110,7 @@ function get_items() {
                 document.getElementsByName(items[i].name)[0].value = value;
             }
             inputValidate();
-            displaySum();
             liabilityValidate();
-            displayliabilitySum();
             displayNetworth();
         })
         .catch(function (error) {
