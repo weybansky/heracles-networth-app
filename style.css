@@ -1,46 +1,199 @@
-.login-container{
-    min-height: 100px;
+/* Prefixes added to support all browsers */
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.login-bg{
-    background: url('https://res.cloudinary.com/benjee/image/upload/v1569283278/Vector_dgyn22.png') no-repeat center;
-    background-size: cover;
-    width: 90%;
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
 }
-.login-form{
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 30px;
-    height: 85%;
-    width: 65%;
-    padding: 10%;
-    margin: 10%;
+
+.container {
+    width: 100%;
+    height: 300px;
+    background: url("images/Vector.png");
+    background-position: left top;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.form-header h1{
-    font-size: 25px;
-    margin-bottom: 20%; 
+    
+.jumbotron {
+    margin-top: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
 }
-.login-control{
-    border-bottom: 2px solid #26255B;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background: none;
-    outline: none;
-    width: 80%;
+    
+.jumbotron > header > h2 {
+    color: #3C3A81;
+    font-weight: 800;
+    font-size: 1.6em;
+    word-spacing: 7px;
+    margin: 20px 0;
 }
-.login-btn{
-    width: 80%;
-    border-radius: 20px;
-    background-color: #26255B;
-    border: #26255B;
+    
+.article {
+    color: #3C3A81;
+    font-size: 16px;
 }
-.login-btn:hover{
-    background-color: rgb(20, 20, 48);
+    
+.action {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
-.login-content{
-    margin: 2% 0%;
-    padding: 4% 0;
+    
+.action > a {
+    width: 120px;
+    height: 35px;
+    border-radius: 11px;
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
-.login-image{
-    height: 80%;
+    
+#get-started {
+    background-color:#26255B;
+    color: #fff;
 }
+    
+#login {
+    background-color: #fff;
+    border: 1px solid #26255B;
+    color: #26255B;
+    font-weight: 800;
+}
+    
+footer {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    background: url("images/Vector.png");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(180deg);
+} 
+
+@media only screen and (min-width: 321px)  {
+/* smartphones, Android phones, landscape iPhone */
+    .jumbotron {
+        margin-top: 450px;
+        padding: 0 10px;
+    }
+
+    footer {
+        width: 50%;
+        height: 50px;
+        position: fixed;
+        bottom: 0;
+        right:1px;
+        background: url("images/Vector.png");
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(180deg);
+    }
+} 
+
+@media only screen and (min-width: 768px)  {
+    /* smartphones, Android phones, landscape iPhone */
+    .jumbotron {
+        margin-top: 450px;
+        padding: 0 10px;
+    }
+    
+    footer {
+        width: 50%;
+        height: 250px;
+        position: fixed;
+        bottom: 0;
+        right:1px;
+        right:1px;
+        background: url("images/landing_page_bottom_component_y1evvf.svg");
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(0deg);
+    }
+}
+
+@media only screen and (min-width: 900px)  {
+/* smartphones, Android phones, landscape iPhone */
+    .jumbotron {
+        margin-top: 450px;
+        padding: 0 10px;
+    }
+    
+    footer {
+        width: 50%;
+        height: 350px;
+        position: fixed;
+        bottom: 0;
+        right:1px;
+        background: url("images/landing_page_bottom_component_y1evvf.svg");
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(0deg);
+    }
+}
+
+@media only screen and (min-width: 1045px)  {
+/* smartphones, Android phones, landscape iPhone */
+.container {
+    width: 100%;
+    height: 300px;
+    background: url("images/Vector.png");
+    background-position: left top;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}     
+
+    .jumbotron {
+        margin-top: 500px;
+        margin-left: 350px;
+        padding: 0 10px;
+        background: white;
+    }
+    
+    footer {
+        width: 50%;
+        height: 450px;
+        position: fixed;
+        bottom: 0;
+        right:0px;
+        background: url("images/landing_page_bottom_component_y1evvf.svg");
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(0deg);
+    }
+}
+

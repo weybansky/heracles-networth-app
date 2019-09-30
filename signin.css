@@ -1,26 +1,30 @@
-
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
-
-* {
-    box-sizing:border-box;
-    margin: 0px;
-    padding: 0px;
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
     font-family: 'Poppins', sans-serif !important;
+    width: 100%;
+    background: #ffffff;
 }
 ::-webkit-scrollbar{
     display: none;
 }
-/* The class .signup is used to make all style affect the signup page only */
-.signup-form{
-    background: white;
-    width: 500px;
+.main{
+    padding: 0;
+    margin: 0;
+    background-color: #26255B;
+}
+.form-container{
+    margin-top: -10px;
+}
+.form{
+    width: 500px; 
     border-radius: 30px;
-    padding:70px 80px;
+    padding:65px 80px;
     margin: 45px 80px;
 }
 .form-header{
-    margin-top: 0;
     padding: 0 30px;
 }
 .heracles-logo{
@@ -29,13 +33,12 @@
     margin: 20px 10px;
 }
 .form-header h1{
-    padding: 10px; 
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
-.login-control{
+.fc{
     font-size: 14px;
     padding: 10px;
     width: 100%;
@@ -43,28 +46,17 @@
     border-bottom: 1px solid #26255B;
     transition-property: border-bottom;
 }
-.login-control:focus{
+.fc:focus{
     outline: none;
     box-shadow: none;
     border-bottom: 3px solid #26255B;
 }
+
 .btn{
-    width: 80%;
-    margin: 10px 20px;
     background-color:  #26255B;
     border-radius: 20px;
     color: #ffffff;
     font-weight: 700;
-    border: #26255B;
-}
-.btn:hover{
-    background-color: #26255B;
-    color: #fff;
-    outline: none;
-}
-.btn:active{
-    background-color: #ffffff;
-    color: #26255B;
 }
 .text-dark{
     font-weight: 700; 
@@ -73,22 +65,19 @@
 .text-dark:hover{
     text-decoration: none;
 }
-.input-control{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}
-.input-control input{
-    width: 100%;
-}
-
 @media(max-width:720px){
+    .mobile{
+        margin: 0;
+    }
     body{
         text-align: center;
     }
-    .signup-form{
+    .form{
         width: 420px;
         margin: 10% 20px;
+    }
+    .form-header{
+        padding: 0px;
     }
     .heracles-logo{
         width: 200px;
@@ -102,12 +91,10 @@
     .register{
         font-size: 14px;
     }
-    .login-control{
-        font-size: 11px;
-    }
-    
+    .email-content,.pwrd-content{
+        font-size: 14px;
+    }    
 }
-
 @media(min-width:780px){
     body{
         background: url('https://res.cloudinary.com/benjee/image/upload/v1569458979/Group_2_1_iznlwy.png') no-repeat;
