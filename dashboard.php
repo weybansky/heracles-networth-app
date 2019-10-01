@@ -23,7 +23,7 @@ session_start();
         <link rel="stylesheet" href="dashboard.css">
         
     </head>
-    <body onload = "callName(); get_networth()">
+    <body onload = "callName();get_networth();get_items();">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>&& $_SESSION["loggedin"] == true
         <![endif]-->
@@ -56,7 +56,7 @@ session_start();
                     </button>
                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <div class="dropdown-item " onclick="_reset()"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</div>
-                    <a class="dropdown-item" href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a>
+                    <!-- <a class="dropdown-item" href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a> -->
                     <a class="dropdown-item" href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
                 </div>
             </div>
@@ -65,7 +65,7 @@ session_start();
             <div class="dashboard-contain">
                 <section class="nav-left">
                     <div class="nav-links">
-                        <a href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a>
+                        <!-- <a href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a> -->
                         <a href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
                         <div class="reset" onclick="_reset()"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</div>
                     </div>
@@ -116,57 +116,55 @@ session_start();
                                         <!-- <div class=""> -->
                                             <div class="col-xs col-sm col-d col-lg sub-heading">
                                                 <p>Cash</p>
-                                                <label for="checking account">Checking Account</label>
-                                                 <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="checking account"  >
-                                                <label for="savings account">Savings Account</label>
-                                                 <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="savings account"  >
-                                                <label for="text">Savings Bonds</label>
-                                                 <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
-                                                <label for="cd's">CDs</label>
-                                                 <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="cd's"  >
-                                                <label for="other">Other</label>
-                                                 <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="other"  >
+                                                <label for="checking-account">Checking Account</label>
+                                                 <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="checking-account"  >
+                                                <label for="savings-account">Savings Account</label>
+                                                 <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="savings-account"  >
+                                                <label for="savings-bonds">Savings Bonds</label>
+                                                 <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="savings-bonds"  >
+                                                <label for="cds">CDs</label>
+                                                 <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="cds"  >
+                                                <label for="other-cash">Other</label>
+                                                 <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="other-cash"  >
                                             </div>
-                                            <div class="col-xs col-sm col-d col-lg sub-heading">
+
+                                        <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Insurance</p>
                                             <label for="insurance">Insurance Value</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="checking account"  >
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="insurance"  >
                                             <p>Market value of Home(s)</p>
-                                            <label for="primary residence">Primary Residence</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="savings account"  >
+                                            <label for="primary-residence">Primary Residence</label>
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="primary-residence"  >
                                             <label for="rental">Rental/Vacation properties</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="rental"  >
                                             <p>Retirement Savings</p>
                                             <label for="pensions">Pensions</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="pensions"  >
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="pensions"  >
                                              
                                         </div>
+
                                         <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Property</p>
-                                            
                                             <label for="cars">Automobiles</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="cars"  >
-
-                                            <label for="savings bonds">House Furnishing</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="cars"  >
+                                            <label for="house-furnishing">House Furnishing</label>
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="house-furnishing"  >
                                             <label for="jewellery">Jewellery</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="cd's"  >
-                                            <label for="other">Other</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="other"  >
-                                             <label for="value of business" id="business-value">Value of Business you own</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="cd's"  >
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="jewellery"  >
+                                            <label for="other-property">Other</label>
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="other-property"  >
+                                             <label for="value-of-business" id="business-value">Value of Business you own</label>
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="value-of-business"  >
                                         </div>
                                         
-                                        
-        
                                         <div class="col-xs col-sm col-d col-lg sub-heading">
                                             <p>Other Investments</p>
                                             <label for="stocks">Stocks</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="checking account"  >
-                                            <label for="mutual funds">Mutual Funds</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="savings account"  >
-                                            <label for="others">Others</label>
-                                             <input type = 'number' class = 'asset' onchange="store_networth()" onkeyup = 'inputValidate();displayNetworth()'   name="savings bonds"  >
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="stocks"  >
+                                            <label for="mutual-funds">Mutual Funds</label>
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="mutual-funds"  >
+                                            <label for="others-investments">Others</label>
+                                             <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="others-investments"  >
                                             
                                         </div>
                                     <!-- </div> -->
@@ -184,24 +182,24 @@ session_start();
                             Balance due on debt
                         </div>
                         <div>
-                            <label for="student loan">Student loan</label><br>
-                            <input type = 'number' class ='_liability' onchange="store_networth()" onkeyup = 'liabilityValidate() ; displayNetworth()' id="student loan"  >
+                            <label for="student-loan">Student loan</label><br>
+                            <input type = 'number' class ='_liability' onchange="store_networth();store_item(event)" onkeyup = 'liabilityValidate() ; displayNetworth()' name="student-loan"  >
                         </div>
                         <div>
                             <label for="mortage">Mortages</label><br>
-                            <input type = 'number'class =' _liability' onchange="store_networth()" onkeyup = 'liabilityValidate() ; displayNetworth()' id="mortage"  >
+                            <input type = 'number'class ='_liability' onchange="store_networth();store_item(event)" onkeyup = 'liabilityValidate() ; displayNetworth()' name="mortage"  >
                         </div>
                         <div>
-                            <label for="other loans">Other loans</label><br>
-                            <input type = 'number'class =' _liability' onchange="store_networth()" onkeyup = 'liabilityValidate() ; displayNetworth()' id="other loans"  >
+                            <label for="other-loans">Other loans</label><br>
+                            <input type = 'number'class ='_liability' onchange="store_networth();store_item(event)" onkeyup = 'liabilityValidate() ; displayNetworth()' name="other-loans"  >
                         </div>
                         <div>
-                            <label for="home equity loan">Home equity loans</label><br>
-                            <input type = 'number'class =' _liability' onchange="store_networth()" onkeyup = 'liabilityValidate() ; displayNetworth()'  id="home equity loan"  >
+                            <label for="home-equity-loan">Home equity loans</label><br>
+                            <input type = 'number'class ='_liability' onchange="store_networth();store_item(event)" onkeyup = 'liabilityValidate() ; displayNetworth()'  name="home-equity-loan"  >
                         </div>
                         <div>
-                            <label for="auto loans">Auto loans</label><br>
-                            <input type = 'number'class =' _liability' onchange="store_networth()" onkeyup = 'liabilityValidate() ; displayNetworth()' id="auto loans"  >
+                            <label for="auto-loans">Auto loans</label><br>
+                            <input type = 'number'class ='_liability' onchange="store_networth();store_item(event)" onkeyup = 'liabilityValidate() ; displayNetworth()' name="auto-loans"  >
                         </div>
                     </div>
                     <div class="col-xs col-sm col-md col-lg sub-heading">
@@ -209,12 +207,12 @@ session_start();
                             Bills due
                         </div>
                         <div>
-                            <label for="house hold utility">House hold utility</label><br>
-                            <input type = 'number'class =' _liability' onchange="store_networth()" onkeyup = 'liabilityValidate() ; displayNetworth()' id="house hold utility"  >
+                            <label for="house-hold-utility">House hold utility</label><br>
+                            <input type = 'number'class ='_liability' onchange="store_networth();store_item(event)" onkeyup = 'liabilityValidate() ; displayNetworth()' name="house-hold-utility"  >
                         </div>
                         <div>
-                            <label for="taxes due">Taxes due</label><br>
-                            <input type = 'number'class =' _liability' onchange="store_networth()" onkeyup = 'liabilityValidate() ; displayNetworth()' id="taxes due"  >
+                            <label for="taxes-due">Taxes due</label><br>
+                            <input type = 'number'class ='_liability' onchange="store_networth();store_item(event)" onkeyup = 'liabilityValidate() ; displayNetworth()' name="taxes-due"  >
                         </div>
                     </div>
                 </div>
