@@ -117,7 +117,7 @@ session_start();
                                             <div class="col-xs col-sm col-d col-lg sub-heading">
                                                 <p>Cash</p>
                                                 <label for="checking-account">Checking Account</label>
-                                                 <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onchange = 'inputValidate();displayNetworth()'   name="checking-account"  >
+                                                 <input type = 'number' class = 'asset' onkeyup="store_networth();store_item(event)" onchange = 'inputValidate();displayNetworth()'   name="checking-account"  >
                                                 <label for="savings-account">Savings Account</label>
                                                  <input type = 'number' class = 'asset' onchange="store_networth();store_item(event)" onkeyup = 'inputValidate();displayNetworth()'   name="savings-account"  >
                                                 <label for="savings-bonds">Savings Bonds</label>
