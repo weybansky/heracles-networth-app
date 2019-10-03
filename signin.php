@@ -45,15 +45,15 @@
                             <div class="button">
                                 <button class="form-control btn"  name="loginBtn"type="submit">Login</button>
                             </div> <br/>
-                            <div class="button">
-                                <button class="form-control btn"  name="send"type="submit">forgot Password?</button>
-                            </div> <br/>
+                        </form>
+                            <form method="get" action="password-recovery/enter_email.php" class="button">
+                                <button class="form-control btn"  name="reset-password" type="submit">forgot Password?</button>
+                            </form> <br/>
                             <div class="register d-flex">
                                 <p class="mx-auto"> No account yet?
                                     <a class="nav-item text-dark" href="signup.php">Sign up</a>
                                 </p>
                             </div>
-                        </form>
                     </div>
            </div>
        <!-- <div class="main-content row">

@@ -37,7 +37,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer style="z-index:-1;"></footer>
 
 </body>
 
