@@ -352,6 +352,25 @@ input:focus {
     text-align: center;
 }
 
+.sharebutton .edit {
+    width: 90%;  
+    text-align: justify;
+    outline: none;
+    color: black;
+    font-size: 1.2rem;
+    line-height: 1.56;
+    margin: 30px;
+    padding: 10px;
+    position: relative;
+    border: 1px solid #DFE8EC;
+    background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 56px;
+    background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 56px;
+    background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 56px;
+    -webkit-background-size: 100% 30px;
+    -moz-background-size: 100% 30px;
+    background-size: 100% 30px;
+}
+
 .sharebutton a:link, .sharebutton a:visited {
     margin: 10px auto;   
     color: white;
