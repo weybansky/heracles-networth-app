@@ -233,7 +233,7 @@ session_start();
             </span>
         </a> 
 
-        <a class="twitter" href="https://twitter.com/intent/tweet?button_hashtag=NetworthCalculator&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-text="Do you know your Net Worth? You can easily calculate it using " data-url="https://networ.com" data-show-count="false" target="_blank">
+        <a class="twitter" href="https://twitter.com/intent/tweet?button_hashtag=NetworthCalculator&ref_src=twsrc%5Etfw" target="_blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x"></i>
