@@ -23,7 +23,7 @@ session_start();
         <link rel="stylesheet" href="dashboard.css">
         <!-- Font Awesome Added by @Aphatheology -->
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-                
+
     </head>
     <body onload = "callName();get_networth();get_items();">
         <!--[if lt IE 7]>
@@ -225,6 +225,12 @@ session_start();
 <!-- Share Buttons by @Aphatheology -->
 <div class="sharebutton">
     <h3>Inform your Friends to calculate their <b>Net Worth</b></h3>
+    <p>You can Copy the text below and Paste for the Twitter and Facebook Share. The Whatsapp share is already prefilled with the same text. <br> Thanks</p>
+    <div class="edit" contenteditable>
+        Do you know your Net Worth? <br> 
+        You can easily calculate it using https://networth-calc.herokuapp.com<br>
+        #NetworthCalculator #HNGInternship
+    </div>
 
         <a class="whatsapp"  href="https://wa.me/?text=Do%20you%20know%20your%20Net%20Worth?%20%0AYou%20can%20easily%20calculate%20it%20using%20https://networth-calc.herokuapp.com%0A#NetworthCalculator%20#HNGInternship" target="_blank">
             <span class="fa-stack fa-lg">
@@ -233,7 +239,7 @@ session_start();
             </span>
         </a> 
 
-        <a class="twitter" href="https://twitter.com/intent/tweet?button_hashtag=NetworthCalculator&ref_src=twsrc%5Etfw" target="_blank">
+        <a class="twitter" href="https://twitter.com/intent/tweet?button_hashtag=NetworthCalculator&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-text="Do you know your Net Worth? You can easily calculate it using " data-url="https://networ.com" data-show-count="false" target="_blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x"></i>
