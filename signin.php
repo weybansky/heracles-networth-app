@@ -1,3 +1,4 @@
+<?php require_once ("server.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,18 @@
                     ?>
                         <form action="includes/login.inc.php" method="post" class="form-container" onsubmit="return formValidation();" >
                             <div class="form-header">
-                                <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">    
+                                <img class="heracles-logo" src="https://res.cloudinary.com/benjee/image/upload/v1569459183/Heracles_Logo_2_qve8nw.svg" alt="Heracles">
+                                <!-- notification message -->
+                                <?php if (isset($_SESSION['success'])) : ?>
+                                  <div class="error success" >
+                                    <h3>
+                                      <?php 
+                                        echo $_SESSION['success']; 
+                                        unset($_SESSION['success']);
+                                      ?>
+                                    </h3>
+                                  </div>
+                                <?php endif ?>    
                                 <h1>Login to your account</h1>
                             </div>
                             <div class="email-content">

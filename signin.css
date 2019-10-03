@@ -65,6 +65,13 @@ body{
 .text-dark:hover{
     text-decoration: none;
 }
+
+.success {
+  color: #3c763d; 
+  background: #dff0d8; 
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
+}
 @media(max-width:720px){
     .mobile{
         margin: 0;
