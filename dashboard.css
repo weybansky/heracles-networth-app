@@ -336,3 +336,58 @@ input:focus {
                 }          
  
   } 
+
+
+/*  Share Buttons CSS by @Aphatheology
+    Don't be Scared!!!
+    A new class name is added to all elements to avoid affecting previous elements
+*/
+.sharebutton {
+    background-color: #5a4fcf;
+    padding: 10px;
+    margin: 50px auto;
+    border: 5px solid inherit;
+    max-width: 350px;
+    color: white;
+    text-align: center;
+}
+
+.sharebutton a:link, .sharebutton a:visited {
+    margin: 10px auto;   
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.sharebutton a:hover, .sharebutton a:active {
+    background-color: #5a4fcf;
+    color: white;
+}
+.sharebutton  a.whatsapp:link, .sharebutton  a.whatsapp:visited {
+    background-color: #25D366; }
+
+.sharebutton a.whatsapp:hover, .sharebutton a.whatsapp:active {
+    background-color: #5a4fcf;
+    color: white;
+}
+
+.sharebutton  a.twitter:link, .sharebutton  a.twitter:visited {
+    background-color: #1da1f2; }
+
+.sharebutton a.twitter:hover, .sharebutton a.twitter:active {
+    background-color: #5a4fcf;
+    color: white;
+}
+
+.sharebutton  a.facebook:link, .sharebutton  a.facebook:visited {
+    background-color: #3b5998; }
+
+.sharebutton a.facebook:hover, .sharebutton a.facebook:active {
+    background-color: #5a4fcf;
+    color: white;
+}
+
+/* Share Button CSS ends here */
