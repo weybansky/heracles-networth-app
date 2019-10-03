@@ -11,12 +11,12 @@ function getArray(){
     for(var i = 0; i < x.length ; i++ ){
         inputArray[i] = Number(x[i].value);
     }
-    inputArray = inputArray
+    inputArray = inputArray;
     return inputArray;
 
 }
 function inputValidate(){
-    var arr = []
+    var arr = [];
     arr = getArray();
     var initsum=0;
     for(var i = 0; i < arr.length ; i++ ){
@@ -40,7 +40,7 @@ function getLiabilityArray(){
     for(var i = 0; i < y.length ; i++ ){
         liabilityInputArray[i] = Number(y[i].value);
     }
-    liabilityInputArray = liabilityInputArray
+    liabilityInputArray = liabilityInputArray;
     return liabilityInputArray;
 
 }

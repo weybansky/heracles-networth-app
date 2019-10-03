@@ -7,14 +7,14 @@ if(isset($_POST['changePwd'])){
   $password=$_POST['password'];
   $dec_password=md5($password);
   $useremail=$_POST['email'];
-  if((empty($password)|| empty($newPassword)||empty($confirmNewPassword)|| empty($useremail)){
-    header("Location: ../signup.php?error=emptyfields");
-          exit();     
-    }elseif($password !== $Cpassword){
-      header("Location: ../signup.php?error=passwordmatch");
+    if(empty($password) || empty($newPassword)||empty($confirmNewPassword)|| empty($useremail) ){
+      header("Location: ../settings.php?error=emptyfields");
+      exit();     
+       
+    } elseif($password !== $confirmNewPassword){
+      header("Location: ../settings.php?error=passwordmatch");
       exit();
-
-    }else{
+    } else{
       $ret= mysqli_query($con,"SELECT password FROM users WHERE email='$useremail' and password='$dec_password'");
       $num=mysqli_fetch_array($ret);
       if($num>0){
@@ -32,4 +32,4 @@ if(isset($_POST['changePwd'])){
         exit();
       }
     }
-}
+  }
