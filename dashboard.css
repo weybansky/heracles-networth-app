@@ -410,3 +410,81 @@ input:focus {
 }
 
 /* Share Button CSS ends here */
+
+.footer{
+    background-color:  #26255B;
+    height: 180px;
+    position: relative;
+   
+}
+
+.footer .footer-content{
+                        display: flex;
+                        height: 150px;
+                       
+                        
+}
+
+.footer .footer-content .footer-section{
+                                            flex: 1;
+                                            padding: 20px;
+                                            /*border:1px solid white;*/
+                                            border-right: 2px solid white;
+                                            background-color: #26255B;
+                                            /*width: 30%;*/
+}
+
+.footer .footer-content h3 {
+                            color: white;
+                            text-align: center;
+}
+
+.footer .footer-content p {
+                           text-align: justify;
+                           color: white;
+                           margin-bottom: 5px;
+                            text-align: center;
+}
+
+footer .footer-content ul {
+                           
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+}
+
+.footer .footer-content .links ul a{
+                           display: block;
+                           font-size: 1.2em;
+                           color: white;
+                           margin-bottom: 10px;
+                            transition: all .3s;
+                            text-align: center;
+                            text-decoration:none; 
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+}
+
+
+
+.footer .footer-content .links ul a:hover{
+                           color: blue;
+                        margin-left: 10px;
+                           transition: all .3s;
+                            
+}
+
+.footer .footer-bottom{
+                        background-color: white;
+                        text-align: center;
+                        height: 20px;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0px;
+                        left:0px;
+                        padding-top: 10px;
+                       margin-top: 3px;
+                       color: #26255B;
+                         padding-bottom: 3px;
+}
