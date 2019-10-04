@@ -252,9 +252,46 @@ session_start();
                 <i class="fa fa-facebook fa-stack-1x"></i>
             </span>
         </a>
+
     </div>
 
     <!-- Share Button ends here -->
+
+    <!-- footer starts here -->
+    <div class="footer"> 
+               <div class="footer-content">
+                        <div class="footer-section about"> 
+                                                           <h3 class="logo-text"> Heracles Networth Calculator </h3> 
+                                                           <p>Inspired by HNG 6   </p> <br>
+                        </div>
+
+
+                        <div class="footer-section links"> 
+                                                            <h3> Quick Links</h3> 
+                                                            <ul>
+                                                                <a href="#">    <li> FAQ </li>  </a>
+                                                                
+                                                               
+                                                                <!-- <a href="#">   <li>Support </li>     </a> -->
+                                                                 <a href="#">    <li> Disclaimer </li>    </a> 
+                                                                  <a href="#">   <li> Privacy Policy </li>   </a>
+
+                                                            </ul>
+                        </div>
+
+
+                        <div class="footer-section">  
+                                                <h3> Follow Us On-Line</h3>
+
+                        </div>
+                   
+               </div> 
+
+                <div class="footer-bottom">
+                        <b>&copy; | Designed By Team Heracles For HNG, 2019. </b> <br>
+                </div>
+    </div>
+
 <?php else:?>
 <h1>You are not logged in, Please <a href="signin.php">signin</a> to Access this page</h1>
         
