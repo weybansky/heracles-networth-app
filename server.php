@@ -31,6 +31,7 @@ if (isset($_POST['regBtn'])) {
   $phone = $_POST['mobile'];
   $password = $_POST['password'];
   $confirmPassword = $_POST['confirmPassword'];
+  $captcha = $_POST['captcha'];
 
   if (empty($fullname)) { array_push($errors, "First Name cannot be blank"); return false; }
     if (empty($email)) { array_push($errors, "Email cannot be blank"); return false;}
