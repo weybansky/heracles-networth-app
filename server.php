@@ -32,29 +32,33 @@ if (isset($_POST['regBtn'])) {
   $password = $_POST['password'];
   $confirmPassword = $_POST['confirmPassword'];
 
-  if (empty($fullname)) { array_push($errors, "First Name cannot be blank");  }
-    if (empty($email)) { array_push($errors, "Email cannot be blank"); }
-    if (empty($phone)) { array_push($errors, "Phone Number cannot be blank"); }
-    if (empty($password)) { array_push($errors, "Password cannot be blank"); }
+  if (empty($fullname)) { array_push($errors, "First Name cannot be blank"); return false; }
+    if (empty($email)) { array_push($errors, "Email cannot be blank"); return false;}
+    if (empty($phone)) { array_push($errors, "Phone Number cannot be blank"); return false;}
+    if (empty($password)) { array_push($errors, "Password cannot be blank"); return false; }
     if ($password != $confirmPassword) {
-  array_push($errors, "The two passwords do not match");
+  array_push($errors, "The two passwords do not match"); return false;
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ 
-    array_push($errors, "Invalid Email");
+    array_push($errors, "Invalid Email"); return false;
   }
   if (!preg_match("/^[a-zA-Z ]*$/",$fullname)) {
       array_push($errors, "Only letters and white space allowed for firstname"); 
+      return false;
     }
 
     if(!preg_match("/^[0-9]*$/", $phone) || strlen($phone) != 11){
       array_push($errors, "Nigeria Number Only e.g 09012345678");
+      return false;
     }
 
     if(strlen($fullname) < 5){
       array_push($errors, "Fullname cannot be less than 5 characters");
+      return false;
     }
     if(strlen($password) < 6){
       array_push($errors, "Password cannot be less than 6 characters");
+      return false;
     }
 
 
