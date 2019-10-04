@@ -41,7 +41,7 @@
                                     <input type="password" class="login-control" id="Cpassword"name="confirmPassword" placeholder="Confirm Password"  required>
                                 </div>
                             </div>
-                            <div class="g-recaptcha" data-sitekey="6LcUkrsUAAAAAHzhwTdJ9Ez0q_aIv_Mr98gsm5q8"></div>
+                            <div class="g-recaptcha" data-sitekey="6LcUkrsUAAAAAHzhwTdJ9Ez0q_aIv_Mr98gsm5q8" name="captcha"></div>
                             <button type="submit" name="regBtn"class="btn signup-btn">Create Account</button>
                             <div class="register d-flex">
                                     <p class="mx-auto"> Already have an account?
@@ -62,6 +62,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- <script type ='text/javascript' src = 'js/signup.js'></script> -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src='main.js'></script>
+    <!-- <script src='main.js'></script> -->
 </body>
 </html>
