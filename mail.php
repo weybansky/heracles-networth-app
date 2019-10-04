@@ -6,10 +6,10 @@
         $secretKey = '6LcUkrsUAAAAAD4eaFqnbz1HaQjc5rwUjGBB7i8_';
         $captcha = $_POST['g-recaptcha-response'];
 
-        if(!$captcha){
-          echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
-          exit;
-        }
+        // if(!$captcha){
+        //   echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
+        //   exit;
+        // }
 
         # FIX: Replace this email with recipient email
         $mail_to = "olamilekan.adekunle@gmail.com";

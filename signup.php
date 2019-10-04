@@ -41,7 +41,7 @@
                                     <input type="password" class="login-control" id="Cpassword"name="confirmPassword" placeholder="Confirm Password"  required>
                                 </div>
                             </div>
-                            <div class="g-recaptcha" data-sitekey="6LcUkrsUAAAAAHzhwTdJ9Ez0q_aIv_Mr98gsm5q8"></div>
+                            <div class="g-recaptcha" data-sitekey="6LcUkrsUAAAAAHzhwTdJ9Ez0q_aIv_Mr98gsm5q8" name="captcha"></div>
                             <button type="submit" name="regBtn"class="btn signup-btn">Create Account</button>
                             <div class="register d-flex">
                                     <p class="mx-auto"> Already have an account?

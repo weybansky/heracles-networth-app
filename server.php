@@ -61,6 +61,11 @@ if (isset($_POST['regBtn'])) {
       return false;
     }
 
+    if(!$captcha){
+      array_push($errors, "Please check the captcha if you are not a bot");
+      return false;
+    }
+
 
   $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
   $result = mysqli_query($con, $user_check_query);
