@@ -25,7 +25,7 @@ session_start();
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
     </head>
-    <body onload = "callName();get_networth();get_items();">
+    <body onload = "callName();get_networth();get_items();get_chart_data();">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>&& $_SESSION["loggedin"] == true
         <![endif]-->
@@ -58,7 +58,13 @@ session_start();
                     </button>
                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <div class="dropdown-item " onclick="_reset()"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</div>
-                    <!-- <a class="dropdown-item" href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a> -->
+                    <a style="color: black" href="profile.html">
+                            Profile
+                        </a>
+                        <br>
+                        <a style="color: black" href="settings.php" onclick="get_chart_data()" data-toggle="modal" data-target="#networthchart" role="button">
+                            View Chart
+                        </a>
                     <a class="dropdown-item" href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
                 </div>
             </div>
@@ -67,7 +73,12 @@ session_start();
             <div class="dashboard-contain">
                 <section class="nav-left">
                     <div class="nav-links">
-                        <!-- <a href="settings.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/settings_ffgo0r.svg" alt="home" width="30" height="30"></span>Settings</a> -->
+                        <a href="profile.html">
+                            Profile
+                        </a>
+                        <a href="settings.php" onclick="get_chart_data()" data-toggle="modal" data-target="#networthchart" role="button">
+                            View Chart
+                        </a>
                         <a href="includes/logout.inc.php"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337223/logout_jimglg.svg" alt="home" width="30" height="30"></span>Log out</a>
                         <div class="reset" onclick="_reset()"><span><img class="icon" src="https://res.cloudinary.com/benjee/image/upload/v1569337224/turn-on_yb5bkw.svg" alt="home" width="30" height="30"></span>reset</div>
                     </div>
@@ -297,6 +308,16 @@ session_start();
         
         <?php endif;?>
         <!-- <script src="" async defer></script> -->
+        <!-- Modal -->
+    <div class="modal fade" id="networthchart" tabindex="-1" role="dialog"
+        aria-labelledby="networthchart" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered .modal-dialog-scrollable" role="document">
+                <div class="modal-body">
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -305,6 +326,7 @@ session_start();
 
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" -->
         <!-- integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="dashboard/dashboard.js"></script>
     </body>
