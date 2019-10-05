@@ -416,43 +416,7 @@ input:focus {
 
 
 
-/* social media links css by @Genghis Khan starts here */
-.note {
-    height: 100px;
-    background-color: #D3D3D3;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
 
-.socials {
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-}
-
-.fb {
-    background: url("https://res.cloudinary.com/dqvu3ts0s/image/upload/v1570217543/facebook-f-brands_rzrkqj_dhcjxx.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.twt {
-    background: url("https://res.cloudinary.com/dqvu3ts0s/image/upload/v1570215812/twitter-brands_vykw0v.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.inst {
-    background: url("https://res.cloudinary.com/dqvu3ts0s/image/upload/v1570214859/instagram-brands_emogeh.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin-right: 50px;
-}  
-    /* social media links css by @Genghis Khan end here */
 .footer{
     background-color:  #26255B;
     height: 180px;
@@ -461,72 +425,94 @@ input:focus {
 }
 
 .footer .footer-content{
-                        display: flex;
-                        height: 150px;
+    display: flex;
+    height: 150px;
                        
                         
 }
 
 .footer .footer-content .footer-section{
-                                            flex: 1;
-                                            padding: 20px;
-                                            /*border:1px solid white;*/
-                                            border-right: 2px solid white;
-                                            background-color: #26255B;
-                                            /*width: 30%;*/
+    flex: 1;
+    padding: 20px;
+    /*border:1px solid white;*/
+    border-right: 2px solid white;
+    background-color: #26255B;
+    /*width: 30%;*/
 }
 
 .footer .footer-content h3 {
-                            color: white;
-                            text-align: center;
+    color: white;
+    text-align: center;
 }
 
 .footer .footer-content p {
-                           text-align: justify;
-                           color: white;
-                           margin-bottom: 5px;
-                            text-align: center;
+    text-align: justify;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
-footer .footer-content ul {
-                           
-                            list-style-type: none;
-                            margin: 0;
-                            padding: 0;
+footer .footer-content ul {                       
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .footer .footer-content .links ul a{
-                           display: block;
-                           font-size: 1.2em;
-                           color: white;
-                           margin-bottom: 10px;
-                            transition: all .3s;
-                            text-align: center;
-                            text-decoration:none; 
-                            list-style-type: none;
-                            margin: 0;
-                            padding: 0;
+    display: block;
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration:none; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 
 
 .footer .footer-content .links ul a:hover{
-                           color: blue;
-                        margin-left: 10px;
-                           transition: all .3s;
+    color: blue;
+    margin-left: 10px;
+    transition: all .3s;
                             
 }
 
 .footer .footer-bottom{
-                        background-color: white;
-                        text-align: center;
-                        height: 20px;
-                        width: 100%;
-                        position: absolute;
-                        bottom: 0px;
-                        left:0px;
-                        padding-top: 10px;
-                       margin-top: 3px;
-                       color: #26255B;
-                         padding-bottom: 3px;
+    background-color: white;
+    text-align: center;
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    padding-top: 10px;
+    margin-top: 3px;
+    color: #26255B;
+    padding-bottom: 3px;
 }
+
+
+/* social media links css by @Genghis Khan starts here */
+#soc-media {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#soc-media a {
+    border: 2px solid #fff;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#soc-media > a > i {
+    font-size: 25px;
+}
+/* social media links css by @Genghis Khan end here */
