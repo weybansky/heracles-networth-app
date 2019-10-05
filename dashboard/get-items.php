@@ -16,7 +16,7 @@ if ($result = mysqli_query($con, $sql)) {
     while ($row = mysqli_fetch_assoc($result)) {
         array_push($rows, $row);
     }
-    echo json_encode(["status" => "error", "items" => $rows]);
+    echo json_encode(["status" => "success", "items" => $rows]);
 } else {
     echo json_encode(["status" => "error", "message" => mysqli_error($con)]);
 }
