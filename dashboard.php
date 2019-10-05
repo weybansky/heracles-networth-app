@@ -33,25 +33,26 @@ session_start();
         <main class="container-fluid" style = 'padding-left:0;padding-right:0;'>
         <header class="nav-header" style = 'left:0px;'>
         <!-- This is used to store the user_id DO NOT REMOVE -->
-                <input type="hidden" id="userid" name="userid" value="<?=$_SESSION['id']?>">
-                <!-- <span><a href="#">Heracles</a></span> -->
-                <!-- <span  id = 'user'><a href="#"> <?php echo $_SESSION['name']?></a></span> -->
-                <div class="summary" >
-                        <div class="networth"  >
-                            <p class ='box'>Your Net worth</p>
-                            <span id="_networth">00.00</span>
-                        </div>
-                        <div class="assets">
-                            <p class = 'box'>Your Assets</p>
-                            <span id="assetSum">00.00</span>
-                        </div>
-                        <div class="liability">
-                            <p class='box'>Your Liability</p>
-                            <span id="liabilitySum">-00.00</span>
-                        </div>
+        <input type="hidden" id="userid" name="userid" value="<?=$_SESSION['id']?>">
+            <!-- <span><a href="#">Heracles</a></span> -->
+            <!-- <span  id = 'user'><a href="#"> <?php echo $_SESSION['name']?></a></span> -->
+            <div class="summary" >
+                <div class="networth"  >
+                    <p class ='box'>Your Net worth</p>
+                    <span id="_networth">00.00</span>
                 </div>
+                <div class="assets">
+                    <p class = 'box'>Your Assets</p>
+                    <span id="assetSum">00.00</span>
+                </div>
+                <div class="liability">
+                    <p class='box'>Your Liability</p>
+                    <span id="liabilitySum">-00.00</span>
+                </div>
+            </div>
         </header>
-                <div class='small_device'>
+
+        <div class='small_device'>
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Options
@@ -265,42 +266,44 @@ session_start();
         </a>
 
     </div>
-
     <!-- Share Button ends here -->
 
     <!-- footer starts here -->
     <div class="footer"> 
-               <div class="footer-content">
-                        <div class="footer-section about"> 
-                                                           <h3 class="logo-text"> Heracles Networth Calculator </h3> 
-                                                           <p>Inspired by HNG 6   </p> <br>
-                        </div>
+        <div class="footer-content">
+            <div class="footer-section about"> 
+                <h3 class="logo-text"> Heracles Networth Calculator </h3> 
+                <p>Inspired by HNG 6   </p> <br>
+            </div>
 
+            <div class="footer-section links"> 
+                <h3> Quick Links</h3> 
+                <ul>
+                    <a href="#">    
+                        <li> FAQ </li>  
+                    </a>
+                    <!-- <a href="#">   <li>Support </li>     </a> -->
+                    <a href="#">    
+                        <li> Disclaimer </li>    
+                    </a> 
+                    <a href="#">   
+                        <li> Privacy Policy </li>   
+                    </a>
+                </ul>
+            </div>
 
-                        <div class="footer-section links"> 
-                                                            <h3> Quick Links</h3> 
-                                                            <ul>
-                                                                <a href="#">    <li> FAQ </li>  </a>
-                                                                
-                                                               
-                                                                <!-- <a href="#">   <li>Support </li>     </a> -->
-                                                                 <a href="#">    <li> Disclaimer </li>    </a> 
-                                                                  <a href="#">   <li> Privacy Policy </li>   </a>
-
-                                                            </ul>
-                        </div>
-
-
-                        <div class="footer-section">  
-                                                <h3> Follow Us On-Line</h3>
-
-                        </div>
-                   
-               </div> 
-
-                <div class="footer-bottom">
-                        <b>&copy; | Designed By Team Heracles For HNG, 2019. </b> <br>
+            <div class="footer-section">  
+                <h3>Follow Us Online</h3>
+                <div id="soc-media">
+                    <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                    <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
                 </div>
+            </div>
+        </div> 
+        <div class="footer-bottom">
+            <b>&copy; | Designed By Team Heracles For HNG, 2019. </b> <br>
+        </div>
     </div>
 
 <?php else:?>
@@ -331,3 +334,8 @@ session_start();
     <script src="dashboard/dashboard.js"></script>
     </body>
 </html>
+<!-- 
+    <a href="https://facebook.com" class=" socials fb" target="_blank"></i></a>
+    <a href="https://twitter.com" class="socials twt" target="_blank"></i></a>
+    <a href="https://instagram.com" class="socials inst" target="_blank"></i></a>
+-->

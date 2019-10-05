@@ -24,7 +24,7 @@ body, html {
     position: fixed;
     top: 0;
     display: flex;
-    z-index:4;
+    z-index: 100;
     justify-content: space-between;
     align-items: center;
     color: #fff;
@@ -32,6 +32,7 @@ body, html {
 }
 .dashboard-contain{
     margin-top: 15vw;
+    z-index: -100;
     /* padding: 20px; */
 }
 .nav-header > span {
@@ -47,6 +48,7 @@ body, html {
     margin: 50px;
     /* margin-top: 10%; */
     margin-left: 20%;
+    z-index: 200;
     width: 60%;
     background: rgba(38,37,91,0.4);
     border-radius: 10px;
@@ -139,6 +141,7 @@ span > a {
 .summary {
     position: fixed;
     /* top : 5vh; */
+    z-index: 500;
     display: flex;
     justify-content: space-evenly;
     color: #fff;
@@ -411,6 +414,9 @@ input:focus {
 
 /* Share Button CSS ends here */
 
+
+
+
 .footer{
     background-color:  #26255B;
     height: 180px;
@@ -419,72 +425,94 @@ input:focus {
 }
 
 .footer .footer-content{
-                        display: flex;
-                        height: 150px;
+    display: flex;
+    height: 150px;
                        
                         
 }
 
 .footer .footer-content .footer-section{
-                                            flex: 1;
-                                            padding: 20px;
-                                            /*border:1px solid white;*/
-                                            border-right: 2px solid white;
-                                            background-color: #26255B;
-                                            /*width: 30%;*/
+    flex: 1;
+    padding: 20px;
+    /*border:1px solid white;*/
+    border-right: 2px solid white;
+    background-color: #26255B;
+    /*width: 30%;*/
 }
 
 .footer .footer-content h3 {
-                            color: white;
-                            text-align: center;
+    color: white;
+    text-align: center;
 }
 
 .footer .footer-content p {
-                           text-align: justify;
-                           color: white;
-                           margin-bottom: 5px;
-                            text-align: center;
+    text-align: justify;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
-footer .footer-content ul {
-                           
-                            list-style-type: none;
-                            margin: 0;
-                            padding: 0;
+footer .footer-content ul {                       
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .footer .footer-content .links ul a{
-                           display: block;
-                           font-size: 1.2em;
-                           color: white;
-                           margin-bottom: 10px;
-                            transition: all .3s;
-                            text-align: center;
-                            text-decoration:none; 
-                            list-style-type: none;
-                            margin: 0;
-                            padding: 0;
+    display: block;
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration:none; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 
 
 .footer .footer-content .links ul a:hover{
-                           color: blue;
-                        margin-left: 10px;
-                           transition: all .3s;
+    color: blue;
+    margin-left: 10px;
+    transition: all .3s;
                             
 }
 
 .footer .footer-bottom{
-                        background-color: white;
-                        text-align: center;
-                        height: 20px;
-                        width: 100%;
-                        position: absolute;
-                        bottom: 0px;
-                        left:0px;
-                        padding-top: 10px;
-                       margin-top: 3px;
-                       color: #26255B;
-                         padding-bottom: 3px;
+    background-color: white;
+    text-align: center;
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    padding-top: 10px;
+    margin-top: 3px;
+    color: #26255B;
+    padding-bottom: 3px;
 }
+
+
+/* social media links css by @Genghis Khan starts here */
+#soc-media {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#soc-media a {
+    border: 2px solid #fff;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#soc-media > a > i {
+    font-size: 25px;
+}
+/* social media links css by @Genghis Khan end here */
