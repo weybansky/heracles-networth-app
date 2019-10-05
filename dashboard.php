@@ -22,7 +22,7 @@ session_start();
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="dashboard.css">
         <!-- Font Awesome Added by @Aphatheology -->
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
     </head>
     <body onload = "callName();get_networth();get_items();get_chart_data();">
