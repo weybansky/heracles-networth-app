@@ -24,7 +24,7 @@ body, html {
     position: fixed;
     top: 0;
     display: flex;
-    z-index:4;
+    z-index: 100;
     justify-content: space-between;
     align-items: center;
     color: #fff;
@@ -32,6 +32,7 @@ body, html {
 }
 .dashboard-contain{
     margin-top: 15vw;
+    z-index: -100;
     /* padding: 20px; */
 }
 .nav-header > span {
@@ -47,6 +48,7 @@ body, html {
     margin: 50px;
     /* margin-top: 10%; */
     margin-left: 20%;
+    z-index: 200;
     width: 60%;
     background: rgba(38,37,91,0.4);
     border-radius: 10px;
@@ -139,6 +141,7 @@ span > a {
 .summary {
     position: fixed;
     /* top : 5vh; */
+    z-index: 500;
     display: flex;
     justify-content: space-evenly;
     color: #fff;
@@ -410,3 +413,43 @@ input:focus {
 }
 
 /* Share Button CSS ends here */
+
+
+
+/* social media links css by @Genghis Khan starts here */
+footer {
+    height: 100px;
+    background-color: #D3D3D3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.socials {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.fb {
+    background: url("https://res.cloudinary.com/dqvu3ts0s/image/upload/v1570217543/facebook-f-brands_rzrkqj_dhcjxx.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.twt {
+    background: url("https://res.cloudinary.com/dqvu3ts0s/image/upload/v1570215812/twitter-brands_vykw0v.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.inst {
+    background: url("https://res.cloudinary.com/dqvu3ts0s/image/upload/v1570214859/instagram-brands_emogeh.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-right: 50px;
+}  
+    /* social media links css by @Genghis Khan end here */
