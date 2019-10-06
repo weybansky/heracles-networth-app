@@ -283,6 +283,9 @@ session_start();
             <div class="footer-section links"> 
                 <h3> Quick Links</h3> 
                 <ul>
+                    <a href="contactus.html">    
+                        <li> Contact US </li>  
+                    </a>
                     <a href="#">    
                         <li> FAQ </li>  
                     </a>
