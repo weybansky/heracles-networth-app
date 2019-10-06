@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+nav.navbar {
+  background-color: #26255b;
+}
+.teamDiv {
+  margin-top: 5%;
+}
+.logo {
+  color: #26255b;
+}
+.logo:hover {
+  color: #26255b;
+}
+.btn {
+  background-color: #26255b;
+  border-color: #26255b;
+  outline-color: #26255b;
+  border-radius: 20px;
+}
+.btn:hover {
+  background-color: #26255b;
+  border-color: #26255b;
+  outline: #26255b;
+}

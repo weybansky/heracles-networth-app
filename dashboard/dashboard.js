@@ -37,13 +37,14 @@ function get_networth() {
         })
         .then(function (response) {
             var res = response.data;
+            console.log("Getting Networth");
             console.log(res);
             if (res.status == "success") {
                 display_networth(res.value);
                 display_asset(res.asset);
                 display_liability(res.liability);
             } else {
-                console.log(res);
+                console.log("Error !!! Get Networth");
             }
         })
         .catch(function (error) {
@@ -70,9 +71,13 @@ function store_item(input) {
     var name = input.target.name;
     var value = input.target.value;
 
-    if (type == '_liability') { type = 'liability'; }
+    if (type == '_liability') {
+        type = 'liability';
+    }
 
-    if (value == '' || value == null) { value = 0; }
+    if (value == '' || value == null) {
+        value = 0;
+    }
 
     axios.get('./dashboard/store-item.php', {
             params: {
@@ -101,7 +106,8 @@ function get_items() {
         })
         .then(function (response) {
             var items = response.data.items;
-            console.log(items);
+            console.log("Getting Items");
+            console.log(response.data);
             for (var i = 0; i < items.length; i++) {
                 var value = items[i].value;
                 if (value == '' || value == null) {
@@ -118,23 +124,59 @@ function get_items() {
         });
 }
 
-function get_itemsaaa() {
-    axios.get('get-items.php', {
+
+function get_chart_data() {
+    var user_id = $("#userid").val();
+    axios.get('./dashboard/get-chart-data.php', {
             params: {
-                user_id: 3,
-                type: type,
+                user_id: Number(user_id),
             }
         })
         .then(function (response) {
             var res = response.data;
-            console.log(res);
-            if (res.status == "success") {
-                // update the networth in view
-                if (res.type == "liability") {
-                    display_liability(res.liability);
-                } else if (res.type == "asset") {
-                    display_asset(res.asset);
-                }
+            console.log("Getting Chart Data");
+            if (res.status == "error") {
+                console.log("error!!!");
+            } else {
+                console.log(res);
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    theme: "dark1", // "light2", "dark1", "dark2"
+                    animationEnabled: true, // change to true		
+                    title: {
+                        text: "NetWorth Chart"
+                    },
+                    data: [{
+                        // Change type to "bar", "area", "spline", "pie",etc.
+                        type: "column",
+                        dataPoints: res.data
+                    }]
+                });
+                // chart.render();
+
+                var chart2 = new CanvasJS.Chart("chartContainer", {
+                    theme: "dark1", // "light2", "dark1", "dark2"
+                    animationEnabled: true, // change to true
+                    title: {
+                        text: "NetWorth Chart"
+                    },
+                    data: [ //array of dataSeries     
+                        { 
+                            /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                            type: "column",
+                            name: "Assets",
+                            showInLegend: true,
+                            dataPoints: res.asset
+                        },
+                        {
+                            type: "column",
+                            name: "Liability",
+                            showInLegend: true,
+                            dataPoints: res.liability
+                        }
+                    ]
+                });
+                chart2.render();
+
             }
         })
         .catch(function (error) {

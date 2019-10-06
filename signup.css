@@ -12,6 +12,9 @@
     display: none;
 }
 /* The class .signup is used to make all style affect the signup page only */
+h1{
+    margin-bottom: 10px;
+}
 .signup-form{
     background: white;
     width: 500px;
@@ -29,7 +32,6 @@
     margin: 20px 10px;
 }
 .form-header h1{
-    padding: 10px; 
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
@@ -37,7 +39,8 @@
 }
 .login-control{
     font-size: 14px;
-    padding: 10px;
+    padding-left: 0;
+    margin-bottom: 20px;
     width: 100%;
     border: none;
     border-bottom: 1px solid #26255B;
@@ -56,6 +59,17 @@
     color: #ffffff;
     font-weight: 700;
     border: #26255B;
+}
+
+#error{
+    margin-bottom: 20px;
+    padding: 0px;
+    background:red;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    color: #fff;
+
 }
 .btn:hover{
     background-color: #26255B;
@@ -86,13 +100,18 @@
     body{
         text-align: center;
     }
+    input[type="text"]{
+        margin-bottom: 0;
+    }
     .signup-form{
-        width: 420px;
-        margin: 10% 20px;
+        width: 90%;
+        padding: 0;
+        margin-left: 15px;
     }
     .heracles-logo{
-        width: 200px;
-        margin: 50px 0px;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 0;
     }
     .form-header h1{
         font-size: 18px;
@@ -103,9 +122,15 @@
         font-size: 14px;
     }
     .login-control{
-        font-size: 11px;
+        font-size: 15px;
+        padding: 0;
     }
-    
+    .input-control{
+        display: block;
+    }
+    .login-content{
+        margin: 0;
+    }
 }
 
 @media(min-width:780px){
